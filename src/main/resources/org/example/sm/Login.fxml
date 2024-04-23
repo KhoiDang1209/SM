@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.sm.Login">
+<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Login">
    <children>
       <Pane layoutX="219.0" layoutY="79.0" prefHeight="438.0" prefWidth="586.0">
          <children>
@@ -15,17 +15,17 @@
                   <Font name="Cambria Bold" size="24.0" />
                </font>
             </Button>
-            <Button layoutX="14.0" layoutY="335.0" mnemonicParsing="false" onAction="#Student" prefHeight="56.0" prefWidth="146.0" text="Student">
+            <Button layoutX="14.0" layoutY="335.0" mnemonicParsing="false" onAction="#switchtoStudenLogin" prefHeight="56.0" prefWidth="146.0" text="Student">
                <font>
                   <Font name="Cambria Bold" size="24.0" />
                </font>
             </Button>
-            <Label contentDisplay="CENTER" layoutX="159.0" layoutY="208.0" prefHeight="66.0" prefWidth="268.0" style="-fx-background-color: white;" text="Choose your role" textAlignment="RIGHT" textFill="#0d0d0d">
+            <Label contentDisplay="CENTER" layoutX="159.0" layoutY="208.0" prefHeight="66.0" prefWidth="268.0" style="-fx-background-color: radial-gradient(center 50% 50%, radius 50%, white, F7EFD8);" text="Choose your role" textAlignment="RIGHT" textFill="#0d0d0d">
                <font>
                   <Font name="Cambria" size="36.0" />
                </font>
             </Label>
-            <Label contentDisplay="CENTER" layoutX="35.0" layoutY="49.0" prefHeight="66.0" prefWidth="517.0" style="-fx-background-color: white;" text="HCMIU-VNU School Management" textAlignment="CENTER" textFill="#0d0d0d">
+            <Label contentDisplay="CENTER" layoutX="35.0" layoutY="49.0" prefHeight="66.0" prefWidth="517.0" style="-fx-background-color: radial-gradient(center 50% 50%, radius 50%, white, C1E3EC)radial-gradient(center 50% 50%, radius 50%, white, ADE0F1);" text="HCMIU-VNU School Management" textAlignment="CENTER" textFill="#0d0d0d">
                <font>
                   <Font name="Cambria" size="36.0" />
                </font>

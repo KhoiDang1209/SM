@@ -13,4 +13,6 @@ module org.example.sm {
 
     opens org.example.sm to javafx.fxml;
     exports org.example.sm;
+    exports Controller;
+    opens Controller to javafx.fxml;
 }
