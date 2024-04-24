@@ -31,7 +31,7 @@ public class Login {
     }
 
     public void Instructor(ActionEvent event) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("StudentLogin.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("InstructorLogin.fxml"));
             Parent root=fxmlLoader.load();
             stage=(Stage)((Node) event.getSource()).getScene().getWindow();
             BackGroundScene backGroundScene=new BackGroundScene();

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InstructorLogin">
+   <children>
+      <Pane layoutX="322.0" layoutY="101.0" prefHeight="506.0" prefWidth="420.0" style="-fx-background-color: DDF1F6; -fx-border-radius: 10px; -fx-border-color: lightblue; -fx-border-width: 2px; -fx-background-radius: 10px;">
+         <children>
+            <Label layoutX="101.0" layoutY="245.0" text="Password">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="141.0" text="InstructorID">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userTextField" layoutX="100.0" layoutY="179.0" prefHeight="40.0" prefWidth="230.0" />
+            <Button layoutX="102.0" layoutY="369.0" mnemonicParsing="false" onAction="#Login" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: radial-gradient(center 50% 50%, radius 50%, white, C1E3EC)radial-gradient(center 50% 50%, radius 50%, white, A0D9EC);" text="Login">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="142.0" layoutY="81.0" prefHeight="30.0" prefWidth="168.0" text="Instructor Login">
+               <font>
+                  <Font name="Cambria" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="passTextField" layoutX="100.0" layoutY="279.0" prefHeight="40.0" prefWidth="230.0" />
+            <Button layoutX="22.0" layoutY="22.0" mnemonicParsing="false" onAction="#Back" prefHeight="40.0" prefWidth="78.0" style="-fx-background-color: radial-gradient(center 50% 50%, radius 50%, white, C1E3EC)radial-gradient(center 50% 50%, radius 50%, white, A0D9EC);" text="&lt;Back" />
+            <Hyperlink layoutX="226.0" layoutY="326.0" text="Forgot password ?" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
