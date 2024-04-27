@@ -7,23 +7,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentPlatform">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.sm.InstructorPlatform">
    <children>
-      <Pane layoutX="70.0" layoutY="137.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
+      <Pane layoutX="80.0" layoutY="147.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
             <ButtonBar prefHeight="40.0" prefWidth="844.0">
-              <buttons>
-                  <Button mnemonicParsing="false" text="Register Course" textAlignment="CENTER" />
+               <buttons>
+                  <Button mnemonicParsing="false" text="Course" textAlignment="CENTER" />
                   <Button mnemonicParsing="false" text="Timetable" />
-                  <Button mnemonicParsing="false" text="Tuition Fee" />
+                  <Button mnemonicParsing="false" text="Annouce" />
                   <Button mnemonicParsing="false" text="Exam Date" />
-                <Button mnemonicParsing="false" text="Grades" />
+                  <Button mnemonicParsing="false" text="Grading" />
                   <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" text="Personal Information" />
-              </buttons>
+               </buttons>
             </ButtonBar>
          </children>
       </Pane>
-      <Label fx:id="nameLabel" layoutX="70.0" layoutY="90.0" text="Label">
+      <Label fx:id="nameLabel" layoutX="80.0" layoutY="100.0" text="Label">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
