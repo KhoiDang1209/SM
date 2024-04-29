@@ -18,7 +18,7 @@
                   <Button mnemonicParsing="false" text="Tuition Fee" />
                   <Button mnemonicParsing="false" text="Exam Date" />
                 <Button mnemonicParsing="false" text="Grades" />
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" text="Personal Information" />
+                  <Button fx:id="switchInfo" mnemonicParsing="false" onAction="#switchToPersonalInfo" prefHeight="26.0" prefWidth="142.0" text="Personal Information" />
               </buttons>
             </ButtonBar>
          </children>
