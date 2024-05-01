@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Tuition">
+<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ExamDateStu">
    <children>
       <Pane layoutX="70.0" layoutY="137.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
             <ButtonBar prefHeight="40.0" prefWidth="844.0" />
-            <Label layoutX="408.0" layoutY="232.0" text="Tuition" />
+            <Label layoutX="408.0" layoutY="232.0" text="ExamStu" />
             <Button layoutX="417.0" layoutY="298.0" mnemonicParsing="false" onAction="#Back" text="Back" />
          </children>
       </Pane>

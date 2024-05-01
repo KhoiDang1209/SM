@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import org.example.sm.Main;
 
 import java.io.IOException;
+import java.sql.SQLData;
 
 public class Login {
 
@@ -33,7 +34,7 @@ public class Login {
             FXMLLoader studentplatform = new FXMLLoader(Main.class.getResource("StudentPlatform.fxml"));
             Parent root = studentplatform.load();
             StudentPlatform studentPlatform = studentplatform.getController();
-            studentPlatform.displayName(username);
+            studentPlatform.displayStuName(username);
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             BackGroundScene backGroundScene = new BackGroundScene();
             StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
@@ -42,10 +43,10 @@ public class Login {
             stage.show();
         }
         else if (username.equals("ins123") && password.equals("1") || username.equals("ins456") && password.equals("1") ) {
-            FXMLLoader studentplatform = new FXMLLoader(Main.class.getResource("StudentPlatform.fxml"));
-            Parent root = studentplatform.load();
-            StudentPlatform studentPlatform = studentplatform.getController();
-            studentPlatform.displayName(username);
+            FXMLLoader instructorplatform = new FXMLLoader(Main.class.getResource("InstructorPlatform.fxml"));
+            Parent root = instructorplatform.load();
+            InstructorPlatform instructorPlatform = instructorplatform.getController();
+            instructorPlatform.displayInsName(username);
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             BackGroundScene backGroundScene = new BackGroundScene();
             StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);

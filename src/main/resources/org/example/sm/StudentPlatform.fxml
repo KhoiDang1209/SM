@@ -13,14 +13,15 @@
          <children>
             <ButtonBar prefHeight="40.0" prefWidth="844.0">
               <buttons>
-                  <Button mnemonicParsing="false" text="Register Course" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Timetable" />
-                  <Button mnemonicParsing="false" text="Tuition Fee" />
-                  <Button mnemonicParsing="false" text="Exam Date" />
-                <Button mnemonicParsing="false" text="Grades" />
-                  <Button fx:id="switchInfo" mnemonicParsing="false" onAction="#switchToPersonalInfo" prefHeight="26.0" prefWidth="142.0" text="Personal Information" />
+                  <Button mnemonicParsing="false" onAction="#Register" text="Register Course" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#Calendar" text="Timetable" />
+                  <Button mnemonicParsing="false" onAction="#Tuition" text="Tuition Fee" />
+                  <Button mnemonicParsing="false" onAction="#ExamDateStu" text="Exam Date" />
+                <Button mnemonicParsing="false" onAction="#Grades" text="Grades" />
+                  <Button fx:id="switchInfo" mnemonicParsing="false" onAction="#Stuinfo" prefHeight="26.0" prefWidth="142.0" text="Personal Information" />
               </buttons>
             </ButtonBar>
+            <Label layoutX="394.0" layoutY="219.0" text="home" />
          </children>
       </Pane>
       <Label fx:id="nameLabel" layoutX="70.0" layoutY="90.0" text="Label">
