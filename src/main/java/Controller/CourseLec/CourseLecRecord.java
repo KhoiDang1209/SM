@@ -13,8 +13,8 @@ public class CourseLecRecord {
     private Time stime;
     private Time etime;
     private String dow;
-    private int sem;
-    public CourseLecRecord(String courseID,String courseName, int credit, String room, Date sdate, Date edate,Time stime, Time etime, String dow, int sem) {
+
+    public CourseLecRecord(String courseID,String courseName, int credit, String room, Date sdate, Date edate,Time stime, Time etime, String dow) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.credit = credit;
@@ -24,7 +24,6 @@ public class CourseLecRecord {
         this.stime = stime;
         this.etime = etime;
         this.dow = dow;
-        this.sem = sem;
     }
     public String getCourseID() {
         return courseID;
@@ -52,8 +51,5 @@ public class CourseLecRecord {
     }
     public String getDow() {
         return dow;
-    }
-    public int getSem() {
-        return sem;
     }
 }

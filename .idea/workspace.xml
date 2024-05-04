@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baa8bb28-9ce7-4adc-89f7-3043bbc1fdf6" name="Changes" comment="" />
+    <list default="true" id="baa8bb28-9ce7-4adc-89f7-3043bbc1fdf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/PersonalEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CourseLec/CourseLec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CourseLec/CourseLec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CourseLec/CourseLecRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CourseLec/CourseLecRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ExamStu/ExamDateStu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ExamStu/ExamDateStu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Grades.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Register.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Stuinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Stuinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/CourseLec.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/CourseLec.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Grades.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Grades.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Register.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,8 +39,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Kurokien&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KhoiDang1209/SM.git&quot;,
+    &quot;accountId&quot;: &quot;de95a987-1ddd-4c6d-8f7a-8f39f1848b4b&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/Controller/StudentListLec/StudentList.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -52,7 +81,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;D:/OOP Project/SM/src/main/java/org/example/sm&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/project PDM/SM/src/main/resources/org/example/sm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/project PDM/SM/src/main/resources&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -62,24 +91,25 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.37011495&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlserver&quot;,
-      &quot;sqlserver.localdb&quot;
+      &quot;sqlserver.localdb&quot;,
+      &quot;sqlserver&quot;
     ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project PDM\SM\src\main\resources\org\example\sm" />
+      <recent name="D:\project PDM\SM\src\main\resources" />
       <recent name="D:\OOP Project\SM\src\main\java\lib" />
+      <recent name="D:\project PDM\SM\src\main\resources\org\example\sm" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project PDM\SM\src\main\java\Controller" />
       <recent name="D:\project PDM\SM\src\main\resources\org\example\sm" />
+      <recent name="D:\project PDM\SM\src\main\java\Controller" />
       <recent name="D:\OOP Project\SM\src\main\resources\org\example\sm" />
       <recent name="D:\OOP Project\SM\src\main\java\Controller" />
       <recent name="D:\OOP Project\SM\src\main\java\org\example\sm" />
@@ -88,8 +118,8 @@
       <recent name="Controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Controller.TimeTable" />
-      <recent name="Controller.CourseLec" />
+      <recent name="Controller" />
+      <recent name="Controller.Tuition" />
     </key>
   </component>
   <component name="RunManager">
@@ -98,7 +128,7 @@
       <module name="SM" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controller.TimeTable.*" />
+          <option name="PATTERN" value="Controller.CourseLec.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,9 +174,13 @@
       <workItem from="1714575623515" duration="7705000" />
       <workItem from="1714641252299" duration="678000" />
       <workItem from="1714700058466" duration="2855000" />
-      <workItem from="1714741311020" duration="10977000" />
-      <workItem from="1714791041617" duration="6198000" />
-      <workItem from="1714797556188" duration="605000" />
+      <workItem from="1714741311020" duration="11012000" />
+      <workItem from="1714789340743" duration="656000" />
+      <workItem from="1714811987654" duration="532000" />
+      <workItem from="1714812678610" duration="4253000" />
+      <workItem from="1714817053194" duration="2913000" />
+      <workItem from="1714826150118" duration="5822000" />
+      <workItem from="1714832003008" duration="473000" />
     </task>
     <servers />
   </component>
@@ -171,10 +205,14 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/Controller/ExamStu/ExamDateStu.java</url>
           <line>91</line>
-          <properties class="Controller.ExamStu.ExamDateStu" method="setLevelLabel">
+          <properties class="Controller.ExamStu.ExamDateStu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

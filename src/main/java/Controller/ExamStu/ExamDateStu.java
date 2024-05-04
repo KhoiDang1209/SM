@@ -1,6 +1,7 @@
 package Controller.ExamStu;
 
 import Controller.DatabaseConnection;
+import Controller.StudentPlatform;
 import image.BackGroundScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -59,6 +60,8 @@ public class ExamDateStu {
     public void Back(ActionEvent event) throws IOException {
         FXMLLoader Back = new FXMLLoader(Main.class.getResource("StudentPlatform.fxml"));
         root = Back.load();
+        StudentPlatform studentController = Back.getController();
+        studentController.displayStuName(username);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BackGroundScene backGroundScene = new BackGroundScene();
         StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);

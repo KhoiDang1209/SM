@@ -19,12 +19,11 @@
                 <TableColumn fx:id="counameCol" prefWidth="245.59996032714844" text="CourseName" />
                   <TableColumn fx:id="creCol" prefWidth="53.60003662109375" text="Credit" />
                   <TableColumn fx:id="roomCol" prefWidth="54.39996337890625" text="Room" />
-                  <TableColumn fx:id="sdayCol" prefWidth="75.99993896484375" text="StartDay" />
-                  <TableColumn fx:id="edayCol" prefWidth="76.0" text="EndDay" />
-                  <TableColumn fx:id="stimeCol" prefWidth="76.0" text="StartTime" />
-                  <TableColumn fx:id="etimeCol" prefWidth="75.20001220703125" text="EndTime" />
-                  <TableColumn fx:id="dowCol" prefWidth="79.9998779296875" text="DayOfWeek" />
-                  <TableColumn fx:id="semCol" prefWidth="60.0" text="Semester" />
+                  <TableColumn fx:id="sdayCol" prefWidth="80.79998779296875" text="StartDay" />
+                  <TableColumn fx:id="edayCol" prefWidth="100.00006103515625" text="EndDay" />
+                  <TableColumn fx:id="stimeCol" prefWidth="90.4000244140625" text="StartTime" />
+                  <TableColumn fx:id="etimeCol" prefWidth="91.199951171875" text="EndTime" />
+                  <TableColumn fx:id="dowCol" prefWidth="82.39996337890625" text="DayOfWeek" />
               </columns>
             </TableView>
          </children>

@@ -46,8 +46,8 @@ public class InstructorPlatform {
         loadScene("CourseLec.fxml", event);
     }
 
-    public void TimetableLec(ActionEvent event) throws IOException {
-        loadScene("Tuition.fxml", event);
+    public void StudentList(ActionEvent event) throws IOException {
+        loadScene("StudentList.fxml", event);
     }
 
     public void GradingLec (ActionEvent event) throws IOException {

@@ -26,4 +26,10 @@ module org.example.sm {
     opens Controller.ExamStu to javafx.fxml;
     exports Controller.TimeTable;
     opens Controller.TimeTable to javafx.fxml;
+    exports Controller.StudentListLec;
+    opens Controller.StudentListLec to javafx.fxml;
+    exports Controller.GradesStudent;
+    opens Controller.GradesStudent to javafx.fxml;
+    exports Controller.Register;
+    opens Controller.Register to javafx.fxml;
 }

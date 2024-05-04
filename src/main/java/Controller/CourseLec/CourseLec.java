@@ -1,6 +1,7 @@
 package Controller.CourseLec;
 
 import Controller.DatabaseConnection;
+import Controller.InstructorPlatform;
 import image.BackGroundScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -49,8 +50,6 @@ public class CourseLec {
     private TableColumn<CourseLecRecord, Time> etimeCol;
     @FXML
     private TableColumn<CourseLecRecord, String> dowCol;
-    @FXML
-    private TableColumn<CourseLecRecord, Integer> semCol;
     public void setAnnoCourse(int n) {
         this.annoCourse.setText("There are " + n + " courses that you taught");
     }
@@ -64,11 +63,10 @@ public class CourseLec {
         stimeCol.setCellValueFactory(new PropertyValueFactory<CourseLecRecord,Time>("stime"));
         etimeCol.setCellValueFactory(new PropertyValueFactory<CourseLecRecord,Time>("etime"));
         dowCol.setCellValueFactory(new PropertyValueFactory<CourseLecRecord,String>("dow"));
-        semCol.setCellValueFactory(new PropertyValueFactory<CourseLecRecord,Integer>("sem"));
         Connection cn = DatabaseConnection.getConnection();
         if(cn!=null)
         {
-            String query = "SELECT c.CourseID,c.CourseName,c.Credit,Room,c.Start_Day,c.End_Day,c.Start_Time,c.End_Time,c.Day_of_Week,c.Semester FROM Course as c WHERE c.LecturerID=?";
+            String query = "SELECT c.CourseID,c.CourseName,c.Credit,Room,c.Start_Day,c.End_Day,c.Start_Time,c.End_Time,c.Day_of_Week FROM Course as c WHERE c.LecturerID=?";
             try (PreparedStatement ps = cn.prepareStatement(query)){
                 ps.setString(1,username);
                 try(ResultSet rs = ps.executeQuery())
@@ -85,8 +83,7 @@ public class CourseLec {
                         Time stime = rs.getTime("Start_Time");
                         Time etime = rs.getTime("End_Time");
                         String dow = rs.getString("Day_of_Week");
-                        int sem = rs.getInt("Semester");
-                        courseLecRecords.add(new CourseLecRecord(courseID,courseName,credit,room,sdate,edate,stime,etime,dow,sem));
+                        courseLecRecords.add(new CourseLecRecord(courseID,courseName,credit,room,sdate,edate,stime,etime,dow));
                     }
                     courseLecTable.setItems(courseLecRecords);
                 }
@@ -108,6 +105,8 @@ public class CourseLec {
     public void Back(ActionEvent event) throws IOException {
         FXMLLoader Back = new FXMLLoader(Main.class.getResource("InstructorPlatform.fxml"));
         root = Back.load();
+        InstructorPlatform instructorPlatform=Back.getController();
+        instructorPlatform.displayInsName(username);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BackGroundScene backGroundScene = new BackGroundScene();
         StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);

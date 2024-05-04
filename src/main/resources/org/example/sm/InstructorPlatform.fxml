@@ -14,7 +14,7 @@
             <ButtonBar prefHeight="40.0" prefWidth="844.0">
                <buttons>
                   <Button fx:id="Course" mnemonicParsing="false" onAction="#CourseLecinfo" text="Course" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Timetable" />
+                  <Button mnemonicParsing="false" onAction="#StudentList" text="Student" />
                   <Button mnemonicParsing="false" text="Annouce" />
                   <Button mnemonicParsing="false" text="Exam Date" />
                   <Button mnemonicParsing="false" text="Grading" />

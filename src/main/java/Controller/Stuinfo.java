@@ -14,6 +14,8 @@ import org.example.sm.Main;
 
 import java.io.IOException;
 
+import static Controller.Login.username;
+
 public class Stuinfo {
     @FXML
     Label nameLabel;
@@ -28,6 +30,8 @@ public class Stuinfo {
     public void Back(ActionEvent event) throws IOException {
         FXMLLoader Back = new FXMLLoader(Main.class.getResource("StudentPlatform.fxml"));
         root = Back.load();
+        StudentPlatform studentController = Back.getController();
+        studentController.displayStuName(username);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BackGroundScene backGroundScene = new BackGroundScene();
         StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
