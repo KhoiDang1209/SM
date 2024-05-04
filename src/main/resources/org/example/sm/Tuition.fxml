@@ -1,25 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Tuition">
+<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Tuition.Tuition">
    <children>
-      <Pane layoutX="70.0" layoutY="137.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
+      <Pane layoutX="67.0" layoutY="157.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
-            <ButtonBar prefHeight="40.0" prefWidth="844.0" />
-            <Label layoutX="408.0" layoutY="232.0" text="Tuition" />
-            <Button layoutX="417.0" layoutY="298.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+            <Button layoutX="52.0" layoutY="42.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+            <Label fx:id="nameLabel" layoutX="181.0" layoutY="90.0" text="There are no more receipts that need to be paid during the semester.">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="ShowHistory" layoutX="181.0" layoutY="135.0" mnemonicParsing="false" onAction="#ShowHistoryAction" text="Show history">
+               <font>
+                  <Font name="Cambria" size="14.0" />
+               </font>
+            </CheckBox>
+            <Pane fx:id="tuitionPane" layoutX="95.0" layoutY="160.0" prefHeight="351.0" prefWidth="705.0">
+               <children>
+                  <TableView fx:id="tuitionTable" layoutX="12.0" layoutY="113.0" prefHeight="125.0" prefWidth="674.0">
+                     <columns>
+                        <TableColumn fx:id="StuIDColumn" prefWidth="137.59999084472656" text="StudentID" />
+                        <TableColumn fx:id="TuiIDColumn" prefWidth="166.39996337890625" text="TuitionID" />
+                        <TableColumn fx:id="AmountColumn" prefWidth="168.800048828125" text="Amount" />
+                        <TableColumn fx:id="payDateColumn" prefWidth="195.199951171875" text="PaymentDate" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="stuidInfo" layoutX="42.0" layoutY="14.0" text="Label">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="DoBInfo" layoutX="42.0" layoutY="67.0" text="Label">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ClassInfo" layoutX="42.0" layoutY="92.0" text="Label">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameInfo" layoutX="42.0" layoutY="41.0" text="Label">
+                     <font>
+                        <Font name="Cambria" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </Pane>
-      <Label fx:id="nameLabel" layoutX="70.0" layoutY="90.0" text="Label">
-         <font>
-            <Font name="Cambria" size="18.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

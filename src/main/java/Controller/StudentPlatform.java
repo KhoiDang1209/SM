@@ -1,4 +1,5 @@
 package Controller;
+
 import image.BackGroundScene;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,27 +17,17 @@ import java.io.IOException;
 public class StudentPlatform {
     @FXML
     Label nameLabel;
+    Stage stage;
+    Scene scene;
 
     public void displayStuName(String id)
     {
         nameLabel.setText("Welcome "+id+" !");
     }
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    public void Stuinfo(ActionEvent event) throws IOException{
-        FXMLLoader Stuinfo = new FXMLLoader(Main.class.getResource("Stuinfo.fxml"));
-        root = Stuinfo.load();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BackGroundScene backGroundScene = new BackGroundScene();
-        StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
-        scene = new Scene(stackPane);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void Tuition(ActionEvent event) throws IOException{
-        FXMLLoader Tuition = new FXMLLoader(Main.class.getResource("Tuition.fxml"));
-        root = Tuition.load();
+
+    private void loadScene(String fxmlFile, ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlFile));
+        Parent root = loader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BackGroundScene backGroundScene = new BackGroundScene();
         StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
@@ -45,48 +36,27 @@ public class StudentPlatform {
         stage.show();
     }
 
-    public void Grades (ActionEvent event) throws IOException{
-        FXMLLoader Grades = new FXMLLoader(Main.class.getResource("Grades.fxml"));
-        root = Grades.load();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BackGroundScene backGroundScene = new BackGroundScene();
-        StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
-        scene = new Scene(stackPane);
-        stage.setScene(scene);
-        stage.show();
+    public void Stuinfo(ActionEvent event) throws IOException {
+        loadScene("Stuinfo.fxml", event);
     }
 
-    public void Register (ActionEvent event) throws IOException{
-        FXMLLoader Register = new FXMLLoader(Main.class.getResource("Register.fxml"));
-        root = Register.load();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BackGroundScene backGroundScene = new BackGroundScene();
-        StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
-        scene = new Scene(stackPane);
-        stage.setScene(scene);
-        stage.show();
+    public void Tuition(ActionEvent event) throws IOException {
+        loadScene("Tuition.fxml", event);
     }
 
-    public void ExamDateStu (ActionEvent event) throws IOException{
-        FXMLLoader ExamDate = new FXMLLoader(Main.class.getResource("ExamDateStu.fxml"));
-        root = ExamDate.load();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BackGroundScene backGroundScene = new BackGroundScene();
-        StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
-        scene = new Scene(stackPane);
-        stage.setScene(scene);
-        stage.show();
+    public void Grades (ActionEvent event) throws IOException {
+        loadScene("Grades.fxml", event);
     }
 
-    public void Calendar (ActionEvent event) throws IOException{
-        FXMLLoader Calendar = new FXMLLoader(Main.class.getResource("Calendar.fxml"));
-        root = Calendar.load();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        BackGroundScene backGroundScene = new BackGroundScene();
-        StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
-        scene = new Scene(stackPane);
-        stage.setScene(scene);
-        stage.show();
+    public void Register (ActionEvent event) throws IOException {
+        loadScene("Register.fxml", event);
     }
 
+    public void ExamDateStu (ActionEvent event) throws IOException {
+        loadScene("ExamDateStu.fxml", event);
+    }
+
+    public void Calendar (ActionEvent event) throws IOException {
+        loadScene("TimeTable.fxml", event);
+    }
 }

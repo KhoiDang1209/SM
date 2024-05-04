@@ -1,7 +1,6 @@
 package Controller;
 
 import image.BackGroundScene;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,15 +8,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.example.sm.Main;
 
 import java.io.IOException;
-import java.sql.SQLData;
-
+import java.sql.*;
 public class Login {
 
     private Stage stage;
@@ -25,44 +23,89 @@ public class Login {
     @FXML
     TextField userTextField;
     @FXML
-    TextField passTextField;
+    PasswordField passTextField;
+
+    public static String username;
 
     public void Login(ActionEvent event) throws IOException {
-        String username = userTextField.getText();
+        username = userTextField.getText();
         String password = passTextField.getText();
-        if (username.equals("ITCSIU22266") && password.equals("1") || username.equals("ITCSIU22252") && password.equals("1") ) {
-            FXMLLoader studentplatform = new FXMLLoader(Main.class.getResource("StudentPlatform.fxml"));
-            Parent root = studentplatform.load();
-            StudentPlatform studentPlatform = studentplatform.getController();
-            studentPlatform.displayStuName(username);
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            BackGroundScene backGroundScene = new BackGroundScene();
-            StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
-            scene = new Scene(stackPane);
-            stage.setScene(scene);
-            stage.show();
-        }
-        else if (username.equals("ins123") && password.equals("1") || username.equals("ins456") && password.equals("1") ) {
-            FXMLLoader instructorplatform = new FXMLLoader(Main.class.getResource("InstructorPlatform.fxml"));
-            Parent root = instructorplatform.load();
-            InstructorPlatform instructorPlatform = instructorplatform.getController();
-            instructorPlatform.displayInsName(username);
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            BackGroundScene backGroundScene = new BackGroundScene();
-            StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
-            scene = new Scene(stackPane);
-            stage.setScene(scene);
-            stage.show();
-        }
-        else {
-            // Nếu username hoặc password không đúng, hiển thị thông báo lỗi hoặc thực hiện hành động khác
-            // Ví dụ: Hiển thị một cửa sổ thông báo
+        if (username.equals("1") && password.equals("1")) {
+            openStudentPlatform(username, event);
+        } else if (username.equals("2") && password.equals("2")) {
+            openInstructorPlatform(username, event);
+        } else {
+            try (Connection cn = DatabaseConnection.getConnection()) {
+                if (cn != null) {
+                    // Kiểm tra trong bảng Student
+                    String queryStudent = "SELECT StudentID FROM Student WHERE StudentID=? AND stu_pass=?";
+                    try (PreparedStatement pstmtStudent = cn.prepareStatement(queryStudent)) {
+                        pstmtStudent.setString(1, username);
+                        pstmtStudent.setString(2, password);
+                        try (ResultSet rsStudent = pstmtStudent.executeQuery()) {
+                            if (rsStudent.next()) {
+                                // Xử lý đăng nhập của student
+                                openStudentPlatform(username, event);
+                                return;
+                            }
+                        }
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
+                    // Kiểm tra trong bảng Lecturer
+                    String queryLecturer = "SELECT LecturerID FROM Lecturer WHERE LecturerID=? AND lec_pass=?";
+                    try (PreparedStatement pstmtLecturer = cn.prepareStatement(queryLecturer)) {
+                        pstmtLecturer.setString(1, username);
+                        pstmtLecturer.setString(2, password);
+                        try (ResultSet rsLecturer = pstmtLecturer.executeQuery()) {
+                            if (rsLecturer.next()) {
+                                // Xử lý đăng nhập của lecturer
+                                openInstructorPlatform(username, event);
+                                return;
+                            }
+                        }
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+            // Nếu không phải student hoặc lecturer, hiển thị thông báo lỗi
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Failed");
             alert.setHeaderText(null);
             alert.setContentText("Invalid username or password. Please try again.");
             alert.showAndWait();
-
         }
     }
+
+    private void openStudentPlatform(String username, ActionEvent event) throws IOException {
+        FXMLLoader studentLoader = new FXMLLoader(Main.class.getResource("StudentPlatform.fxml"));
+        Parent root = studentLoader.load();
+        StudentPlatform studentController = studentLoader.getController();
+        studentController.displayStuName(username);
+        openPlatform(root, event);
+    }
+
+    private void openInstructorPlatform(String username, ActionEvent event) throws IOException {
+        FXMLLoader instructorLoader = new FXMLLoader(Main.class.getResource("InstructorPlatform.fxml"));
+        Parent root = instructorLoader.load();
+        InstructorPlatform instructorController = instructorLoader.getController();
+        instructorController.displayInsName(username);
+        openPlatform(root, event);
+    }
+
+    private void openPlatform(Parent root, ActionEvent event) {
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        BackGroundScene backgroundScene = new BackGroundScene();
+        StackPane stackPane = new StackPane(backgroundScene.getBackgroundView(), root);
+        scene = new Scene(stackPane);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
+

@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baa8bb28-9ce7-4adc-89f7-3043bbc1fdf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTableRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/TimeTable.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Stuinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Stuinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ExamDateStu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Grades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Grades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/StudentPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/StudentPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Tuition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Calendar.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/ExamDateStu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/ExamDateStu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Grades.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Grades.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Tuition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Tuition.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +40,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -36,33 +54,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;D:/OOP Project/SM/src/main/java/org/example/sm&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/project PDM/SM/src/main/resources/org/example/sm&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.37011495&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DatabaseConnection.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Test.executor": "Run",
+    "Application.TestSqlConnection.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "D:/OOP Project/SM/src/main/java/org/example/sm",
+    "last_opened_file_path": "D:/project PDM/SM/src/main/resources/org/example/sm",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.37011495",
+    "settings.editor.selected.configurable": "preferences.pathVariables",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver",
+      "sqlserver.localdb"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project PDM\SM\src\main\resources\org\example\sm" />
@@ -75,6 +102,13 @@
       <recent name="D:\OOP Project\SM\src\main\java\Controller" />
       <recent name="D:\OOP Project\SM\src\main\java\org\example\sm" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Controller.TimeTable" />
+      <recent name="Controller.CourseLec" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -82,7 +116,7 @@
       <module name="SM" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controller.*" />
+          <option name="PATTERN" value="Controller.TimeTable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,7 +128,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -116,13 +151,35 @@
       <workItem from="1714357702413" duration="9039000" />
       <workItem from="1714393996520" duration="2239000" />
       <workItem from="1714396558011" duration="3307000" />
-      <workItem from="1714540392950" duration="34000" />
-      <workItem from="1714541437982" duration="601000" />
+      <workItem from="1714542527798" duration="116000" />
+      <workItem from="1714542646435" duration="1000" />
+      <workItem from="1714542657738" duration="3000" />
+      <workItem from="1714542672845" duration="13927000" />
+      <workItem from="1714558826803" duration="1853000" />
+      <workItem from="1714569122765" duration="2557000" />
+      <workItem from="1714571715266" duration="1116000" />
+      <workItem from="1714575091053" duration="343000" />
+      <workItem from="1714575623515" duration="7705000" />
+      <workItem from="1714641252299" duration="678000" />
+      <workItem from="1714700058466" duration="2855000" />
+      <workItem from="1714741311020" duration="10977000" />
+      <workItem from="1714791041617" duration="6198000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -131,10 +188,14 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Controller/Stuinfo.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="4" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Controller/ExamStu/ExamDateStu.java</url>
+          <line>91</line>
+          <properties class="Controller.ExamStu.ExamDateStu" method="setLevelLabel">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

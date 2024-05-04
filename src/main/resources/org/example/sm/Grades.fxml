@@ -3,17 +3,40 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Grades">
    <children>
-      <Pane layoutX="70.0" layoutY="137.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
+      <Pane layoutX="9.0" layoutY="121.0" prefHeight="558.0" prefWidth="1011.0" style="-fx-background-color: white;">
          <children>
             <ButtonBar prefHeight="40.0" prefWidth="844.0" />
-            <Label layoutX="408.0" layoutY="232.0" text="Grades" />
-            <Button layoutX="417.0" layoutY="298.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+            <Button layoutX="23.0" layoutY="25.0" mnemonicParsing="false" onAction="#Back" prefHeight="30.0" prefWidth="54.0" text="Back" />
+            <Label layoutX="137.0" layoutY="206.0" text="Enter semester to view exam mark">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="gradesTableView" layoutX="37.0" layoutY="242.0" prefHeight="302.0" prefWidth="938.0">
+              <columns>
+                  <TableColumn fx:id="studentIDTableColumn" prefWidth="88.79998397827148" text="Student ID" />
+                <TableColumn fx:id="courseIDTableColumn" prefWidth="72.0" text="Course ID" />
+                <TableColumn fx:id="coursenameTableColumn" prefWidth="276.79998779296875" text="Course Name" />
+                  <TableColumn fx:id="creditTableColumn" prefWidth="58.399993896484375" text="Credit" />
+                  <TableColumn fx:id="semesterTableColumn" prefWidth="63.199951171875" text="Semester" />
+                  <TableColumn fx:id="progressTableColumn" prefWidth="60.79998779296875" text="Progress" />
+                  <TableColumn fx:id="midtermTableColumn" prefWidth="60.0" text="Midterm" />
+                  <TableColumn fx:id="finalTableColumn" prefWidth="47.20001220703125" text="Final" />
+                  <TableColumn fx:id="overallTableColumn" prefWidth="94.40008544921875" text="Overall Mark" />
+                  <TableColumn fx:id="overallCharacterTableColumn" prefWidth="113.60009765625" text="Overall Mark (Ch)" />
+              </columns>
+            </TableView>
+            <TextField fx:id="semesterTextField" layoutX="357.0" layoutY="204.0" promptText="Semester" />
+            <Button layoutX="532.0" layoutY="204.0" mnemonicParsing="false" onAction="#View" text="View" />
          </children>
       </Pane>
       <Label fx:id="nameLabel" layoutX="70.0" layoutY="90.0" text="Label">

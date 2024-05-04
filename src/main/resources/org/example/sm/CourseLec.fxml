@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CourseLec.CourseLec">
+   <children>
+      <Pane layoutX="80.0" layoutY="147.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
+         <children>
+            <Button layoutX="32.0" layoutY="34.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+            <Label fx:id="annoCourse" layoutX="114.0" layoutY="91.0" text="Label" />
+            <TableView fx:id="courseLecTable" layoutX="14.0" layoutY="161.0" prefHeight="200.0" prefWidth="865.0">
+              <columns>
+                <TableColumn fx:id="couidCol" prefWidth="63.999977111816406" text="CourseID" />
+                <TableColumn fx:id="counameCol" prefWidth="245.59996032714844" text="CourseName" />
+                  <TableColumn fx:id="creCol" prefWidth="53.60003662109375" text="Credit" />
+                  <TableColumn fx:id="roomCol" prefWidth="54.39996337890625" text="Room" />
+                  <TableColumn fx:id="sdayCol" prefWidth="75.99993896484375" text="StartDay" />
+                  <TableColumn fx:id="edayCol" prefWidth="76.0" text="EndDay" />
+                  <TableColumn fx:id="stimeCol" prefWidth="76.0" text="StartTime" />
+                  <TableColumn fx:id="etimeCol" prefWidth="75.20001220703125" text="EndTime" />
+                  <TableColumn fx:id="dowCol" prefWidth="79.9998779296875" text="DayOfWeek" />
+                  <TableColumn fx:id="semCol" prefWidth="60.0" text="Semester" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
