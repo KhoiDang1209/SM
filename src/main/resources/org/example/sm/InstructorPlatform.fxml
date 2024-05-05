@@ -20,7 +20,7 @@
                   <Button mnemonicParsing="false" onAction="#AnnounceLec" text="Annouce" />
                   <Button mnemonicParsing="false" text="Exam Date" />
                   <Button mnemonicParsing="false" text="Grading" />
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" text="Personal Information" />
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" onAction="#Personal" text="Personal Information" />
                </buttons>
             </ButtonBar>
             <TitledPane animated="false" layoutX="91.0" layoutY="90.0" prefHeight="284.0" prefWidth="709.0" text="General Information">

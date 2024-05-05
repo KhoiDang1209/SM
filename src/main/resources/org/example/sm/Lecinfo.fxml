@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentInfo.StudentInfo">
+<AnchorPane prefHeight="728.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LecturerInfo.LecturerInfo">
    <children>
       <Pane layoutX="70.0" layoutY="137.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
@@ -30,86 +30,64 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="20.0" prefWidth="86.0" text="  Student ID:">
+                        <Label prefHeight="20.0" prefWidth="86.0" text="  Lecturer ID:">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="  Student name:" GridPane.rowIndex="1">
+                        <Label text="  Lecturer name:" GridPane.rowIndex="1">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="  Date of birth:" GridPane.rowIndex="2">
+                        <Label text="  Email:" GridPane.rowIndex="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="  Gender:" GridPane.rowIndex="3">
+                        <Label text="  Phone:" GridPane.rowIndex="3">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="  Major:" GridPane.rowIndex="4">
+                        <Label text="  Field:" GridPane.rowIndex="4">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="  Class:" GridPane.rowIndex="5">
+                        <Label text="  Join date:" GridPane.rowIndex="5">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="  Email:" GridPane.rowIndex="6">
+                        <Label fx:id="lecturerIDLabel" text="Label" GridPane.columnIndex="1">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="  Level:" GridPane.rowIndex="7">
+                        <Label fx:id="lecturerNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="studentInfoLabel" text="Label" GridPane.columnIndex="1">
+                        <Label fx:id="lecturerEmailLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="studentNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label fx:id="lecturerPhoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="dateOfBirthLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label fx:id="lecturerFieldLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="genderLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="majorLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="classLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="emailLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="levelLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                        <Label fx:id="lecturerJoinDateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <font>
                               <Font size="14.0" />
                            </font>
