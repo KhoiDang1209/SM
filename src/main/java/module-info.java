@@ -32,4 +32,8 @@ module org.example.sm {
     opens Controller.GradesStudent to javafx.fxml;
     exports Controller.Register;
     opens Controller.Register to javafx.fxml;
+    exports Controller.StudentInfo;
+    opens Controller.StudentInfo to javafx.fxml;
+    exports Controller.AnnounceEmail;
+    opens Controller.AnnounceEmail to javafx.fxml;
 }

@@ -1,5 +1,6 @@
-package Controller;
+package Controller.StudentInfo;
 
+import Controller.StudentPlatform;
 import image.BackGroundScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ import java.io.IOException;
 
 import static Controller.Login.username;
 
-public class Stuinfo {
+public class StudentInfo {
     @FXML
     Label nameLabel;
     private Stage stage;

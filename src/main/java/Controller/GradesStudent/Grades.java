@@ -117,7 +117,7 @@ public class Grades implements Initializable {
         connectDB = DatabaseConnection.getConnection();
 
         if (connectDB != null) {
-            String gradesViewQuery = "SELECT e.StudentID, e.CourseID, c.CourseName, c.Credit, c.Semester, e.Progress, e.Midterm, e.Final, e.Overall, e.OverallCharacter, s.Name, s.Gender, s.Class, s.Major, s.Level FROM Enroll as e, Course as c, Student as s WHERE e.CourseID = c.CourseID AND e.StudentID = '" + Login.username + "' AND e.StudentID = s.StudentID";
+            String gradesViewQuery = "SELECT e.StudentID, e.CourseID, c.CourseName, c.Credit, e.Semester, e.Progress, e.Midterm, e.Final, e.Overall, e.OverallCharacter, s.Name, s.Gender, s.Class, s.Major, s.Level FROM Enroll as e, Course as c, Student as s WHERE e.CourseID = c.CourseID AND e.StudentID = '" + Login.username + "' AND e.StudentID = s.StudentID";
 
             try {
                 statement = connectDB.createStatement();
@@ -195,9 +195,9 @@ public class Grades implements Initializable {
         if (connectDB != null) {
             String gradesViewQuery;
             if (semester == null || semester.isEmpty()) {
-                gradesViewQuery = "SELECT e.StudentID, e.CourseID, c.CourseName, c.Credit, c.Semester, e.Progress, e.Midterm, e.Final, e.Overall, e.OverallCharacter, s.Name, s.Gender,s.Class, s.Major, s.Level FROM Enroll as e, Course as c, Student as s WHERE e.CourseID = c.CourseID AND e.StudentID = '" + Login.username + "' AND e.StudentID = s.StudentID";
+                gradesViewQuery = "SELECT e.StudentID, e.CourseID, c.CourseName, c.Credit, e.Semester, e.Progress, e.Midterm, e.Final, e.Overall, e.OverallCharacter, s.Name, s.Gender,s.Class, s.Major, s.Level FROM Enroll as e, Course as c, Student as s WHERE e.CourseID = c.CourseID AND e.StudentID = '" + Login.username + "' AND e.StudentID = s.StudentID";
             } else {
-                gradesViewQuery = "SELECT e.StudentID, e.CourseID, c.CourseName, c.Credit, c.Semester, e.Progress, e.Midterm, e.Final, e.Overall, e.OverallCharacter, s.Name, s.Gender, s.Class, s.Major, s.Level FROM Enroll as e, Course as c, Student as s WHERE e.CourseID = c.CourseID AND e.StudentID = '" + Login.username + "' AND e.StudentID = s.StudentID AND c.Semester = '" + semester + "'";
+                gradesViewQuery = "SELECT e.StudentID, e.CourseID, c.CourseName, c.Credit, e.Semester, e.Progress, e.Midterm, e.Final, e.Overall, e.OverallCharacter, s.Name, s.Gender, s.Class, s.Major, s.Level FROM Enroll as e, Course as c, Student as s WHERE e.CourseID = c.CourseID AND e.StudentID = '" + Login.username + "' AND e.StudentID = s.StudentID AND e.Semester = '" + semester + "'";
             }
 
             try {
