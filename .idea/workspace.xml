@@ -7,12 +7,7 @@
     <list default="true" id="baa8bb28-9ce7-4adc-89f7-3043bbc1fdf6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/StudentInfo/StudentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/StudentInfo/StudentInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/StudentPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/StudentPlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Grades.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Grades.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Stuinfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Stuinfo.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +174,7 @@
       <workItem from="1714893357811" duration="1034000" />
       <workItem from="1714894453594" duration="19000" />
       <workItem from="1714907115683" duration="1049000" />
+      <workItem from="1714908572425" duration="86000" />
     </task>
     <servers />
   </component>
