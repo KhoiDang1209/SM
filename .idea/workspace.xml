@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baa8bb28-9ce7-4adc-89f7-3043bbc1fdf6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTableRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTableRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/TimeTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/TimeTable.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_2_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_2_59_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Register/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Register/RegisterRec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Register/RegisterRec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +180,7 @@
       <workItem from="1714968686700" duration="6255000" />
       <workItem from="1715141586249" duration="4295000" />
       <workItem from="1715145999068" duration="610000" />
+      <workItem from="1715178846472" duration="246000" />
     </task>
     <servers />
   </component>
@@ -208,15 +209,6 @@
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Controller/ExamStu/ExamDateStu.java</url>
-          <line>91</line>
-          <properties class="Controller.ExamStu.ExamDateStu">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

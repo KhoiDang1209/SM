@@ -14,22 +14,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.example.sm.Main;
 
-import java.awt.*;
+import javax.security.auth.callback.Callback;
+import javax.swing.*;
+
+import java.awt.geom.QuadCurve2D;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -71,18 +69,32 @@ public class Register implements Initializable {
     @FXML
     private TableColumn<RegisterRec, String> RoomColumn;
     @FXML
-    private TextField filterTextField;
+    private TableColumn<RegisterRec, String> LecturerNameColumn;
+    @FXML
+    private TableColumn<RegisterRec, String> DayColumn;
+    @FXML
+    private TableColumn<RegisterRec, Time> StartColumn;
+    @FXML
+    private TableColumn<RegisterRec, Time> EndColumn;
 
+    @FXML
+    private TextField filterTextField;
+    @FXML
+    private TableColumn tickColumn = new TableColumn("Action");
+    //    private TableColumn<RegisterRec, CheckBox> tickColumn;
     ObservableList<RegisterRec> RegisterRecObservableList = FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resource) {
 
+
+
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = DatabaseConnection.getConnection();
 
-        String RegisterViewQuery = "SELECT c.CourseID, c.CourseName, c.Credit, c.Room FROM Course AS c";
+        String RegisterViewQuery = "SELECT c.CourseID, c.CourseName, c.Credit, c.Room, L.LecturerName,  c.Day_of_Week, c.Start_Time, c.End_Time FROM Course AS c \n" +
+                "                INNER JOIN Lecturer AS L ON L.LecturerID = c.LecturerID";
 
         try {
 
@@ -94,9 +106,15 @@ public class Register implements Initializable {
                 String queryCourseName = queryOutput.getString("CourseName");
                 int queryCredit = queryOutput.getInt("Credit");
                 String queryRoom = queryOutput.getString("Room");
+                String queryLecturerName = queryOutput.getString("LecturerName");
+
+                String queryDay = queryOutput.getString("Day_of_Week");
+                Time queryStart = queryOutput.getTime("Start_Time");
+                Time queryEnd = queryOutput.getTime("End_Time");
+                CheckBox queryCheck = new CheckBox(queryCourseID);
 
 
-                RegisterRecObservableList.add(new RegisterRec(queryCourseID, queryCourseName, queryCredit, queryRoom));
+                RegisterRecObservableList.add(new RegisterRec(queryCourseID, queryCourseName, queryCredit, queryRoom, queryLecturerName, queryDay, queryStart, queryEnd, queryCheck));
 
             }
 
@@ -105,6 +123,12 @@ public class Register implements Initializable {
             CourseNameColumn.setCellValueFactory(new PropertyValueFactory<>("CourseName"));
             CreditColumn.setCellValueFactory(new PropertyValueFactory<>("Credit"));
             RoomColumn.setCellValueFactory(new PropertyValueFactory<>("Room"));
+            LecturerNameColumn.setCellValueFactory(new PropertyValueFactory<>("LecturerName"));
+
+            EndColumn.setCellValueFactory(new PropertyValueFactory<>("End"));
+            DayColumn.setCellValueFactory(new PropertyValueFactory<>("Day"));
+            StartColumn.setCellValueFactory(new PropertyValueFactory<>("Start"));
+
 
             TableView.setItems(RegisterRecObservableList);
 
@@ -134,4 +158,5 @@ public class Register implements Initializable {
             e.printStackTrace();
         }
     }
+
 }

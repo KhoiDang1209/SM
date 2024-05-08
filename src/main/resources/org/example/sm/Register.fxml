@@ -18,9 +18,13 @@
             <TableView fx:id="TableView" layoutX="23.0" layoutY="123.0" prefHeight="177.0" prefWidth="844.0">
               <columns>
                 <TableColumn fx:id="CourseIDColumn" prefWidth="75.0" text="Course ID" />
-                  <TableColumn fx:id="CourseNameColumn" prefWidth="100.80000305175781" text="Course Name" />
-                  <TableColumn fx:id="CreditColumn" prefWidth="76.0" text="Credit" />
-                  <TableColumn fx:id="RoomColumn" prefWidth="460.7999267578125" text="Room" />
+                  <TableColumn fx:id="CourseNameColumn" prefWidth="316.0" text="Course Name" />
+                  <TableColumn fx:id="CreditColumn" prefWidth="46.0" text="Credit" />
+                  <TableColumn fx:id="RoomColumn" prefWidth="72.0" text="Room" />
+                  <TableColumn fx:id="LecturerNameColumn" prefWidth="140.0" text="LecturerName" />
+                  <TableColumn fx:id="DayColumn" prefWidth="75.0" text="Day" />
+                  <TableColumn fx:id="StartColumn" prefWidth="75.0" text="Start" />
+                  <TableColumn fx:id="EndColumn" prefWidth="75.0" text="End" />
               </columns>
             </TableView>
             <Label layoutX="42.0" layoutY="85.0" text="Filter by course name:" />
