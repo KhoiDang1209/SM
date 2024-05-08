@@ -10,16 +10,17 @@
    <children>
       <Pane layoutX="70.0" layoutY="137.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
-            <TableView fx:id="TimeTable" layoutX="63.0" layoutY="83.0" prefHeight="376.0" prefWidth="759.0">
+            <TableView fx:id="TimeTable" layoutX="8.0" layoutY="83.0" prefHeight="376.0" prefWidth="875.0">
               <columns>
-                <TableColumn fx:id="CourseIDCol" prefWidth="91.19999694824219" text="Course ID" />
-                <TableColumn fx:id="CourseNameCol" prefWidth="156.0" text="Course's Name" />
-                  <TableColumn fx:id="DayOfWeekCol" prefWidth="86.0" text="Day Of Week" />
-                  <TableColumn fx:id="StartTimeCol" prefWidth="77.0" text="Start Time" />
-                  <TableColumn fx:id="EndTimeCol" prefWidth="76.0" text="End Time" />
-                  <TableColumn fx:id="RoomCol" text="Room" />
-                  <TableColumn fx:id="LabStartTimeCol" prefWidth="103.0" text="Lab Start Time" />
-                  <TableColumn fx:id="LabEndTimeCol" prefWidth="94.0" text="Lab End Time" />
+                <TableColumn fx:id="CourseIDCol" prefWidth="83.0" text="Course ID" />
+                <TableColumn fx:id="CourseNameCol" prefWidth="213.0" text="Course's Name" />
+                  <TableColumn fx:id="DayOfWeekCol" prefWidth="93.0" text="Day Of Week" />
+                  <TableColumn fx:id="StartTimeCol" prefWidth="73.0" text="Start Time" />
+                  <TableColumn fx:id="EndTimeCol" prefWidth="71.0" text="End Time" />
+                  <TableColumn fx:id="RoomCol" prefWidth="82.0" text="Room" />
+                  <TableColumn fx:id="LabStartTimeCol" prefWidth="97.0" text="Lab Start Time" />
+                  <TableColumn fx:id="LabEndTimeCol" prefWidth="87.0" text="Lab End Time" />
+                  <TableColumn fx:id="LabDayCol" prefWidth="75.0" text="Lab Day" />
               </columns>
             </TableView>
             <Button layoutX="43.0" layoutY="28.0" mnemonicParsing="false" onAction="#Back" text="Back" />

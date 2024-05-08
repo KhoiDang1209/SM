@@ -11,8 +11,9 @@ public class TimeTableRecord {
     private String Day_of_Week;
     private Time LabStartTime;
     private Time LabEndTime;
+    private String LabDay;
 
-    public TimeTableRecord(String courseID, String courseName, Time StartTime, Time EndTime, String Room, String Day_of_Week, Time LabStartTime, Time LabEndTime) {
+    public TimeTableRecord(String courseID, String courseName, Time StartTime, Time EndTime, String Room, String Day_of_Week, Time LabStartTime, Time LabEndTime, String LabDay) {
         this.courseID = courseID;
         this.StartTime = StartTime;
         this.EndTime = EndTime;
@@ -21,6 +22,7 @@ public class TimeTableRecord {
         this.Day_of_Week = Day_of_Week;
         this.LabStartTime = LabStartTime;
         this.LabEndTime = LabEndTime;
+        this.LabDay = LabDay;
     }
     public String getCourseID() {
         return courseID;
@@ -44,6 +46,10 @@ public class TimeTableRecord {
         return LabStartTime;
     }
     public Time getLabEndTime() {
+
         return LabEndTime;
+    }
+    public String getLabDay() {
+        return LabDay;
     }
 }

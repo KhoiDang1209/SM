@@ -41,6 +41,9 @@ public class TimeTable {
     private TableColumn<TimeTableRecord, Time> LabStartTimeCol;
     @FXML
     private TableColumn<TimeTableRecord, Time> LabEndTimeCol;
+    @FXML
+    private TableColumn<TimeTableRecord, String> LabDayCol;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -65,9 +68,11 @@ public class TimeTable {
         DayOfWeekCol.setCellValueFactory(new PropertyValueFactory<>("Day_of_Week"));
         LabStartTimeCol.setCellValueFactory(new PropertyValueFactory<>("LabStartTime"));
         LabEndTimeCol.setCellValueFactory(new PropertyValueFactory<>("LabEndTime"));
+        LabDayCol.setCellValueFactory(new PropertyValueFactory<>("LabDay"));
+
         if(cn!=null)
         {
-            String query = "SELECT s.StudentID, c.Day_of_Week, c.CourseName, c.Start_Time, c.End_Time, c.Room, c.CourseID, L.Start_Time as Lab_Start_Time, L.End_Time as Lab_End_Time " +
+            String query = "SELECT s.StudentID, c.Day_of_Week, c.CourseName, c.Start_Time, c.End_Time, c.Room, c.CourseID, L.Start_Time as Lab_Start_Time, L.End_Time as Lab_End_Time, L.Day_of_Week as Lab_Day " +
                     "FROM Student s " +
                     "INNER JOIN Enroll er ON s.StudentID = er.StudentID " +
                     "INNER JOIN Course c ON er.CourseID = c.CourseID " +
@@ -86,7 +91,8 @@ public class TimeTable {
                         String room = rs.getString("Room");
                         Time labStartTime = rs.getTime("Lab_Start_Time");
                         Time labEndTime = rs.getTime("Lab_End_Time");
-                        timeTableRecords.add(new TimeTableRecord(courseID, courseName, startTime, endTime, room, dayOfWeek, labStartTime, labEndTime));
+                        String labDay = rs.getString("Lab_Day");
+                        timeTableRecords.add(new TimeTableRecord(courseID, courseName, startTime, endTime, room, dayOfWeek, labStartTime, labEndTime, labDay));
                     }
                     TimeTable.setItems(timeTableRecords);
                 }
