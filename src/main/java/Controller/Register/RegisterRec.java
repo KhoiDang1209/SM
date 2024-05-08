@@ -1,56 +1,47 @@
 package Controller.Register;
 
 public class RegisterRec {
-    private String CourseID, LecturerID, CourseName;
+    private String CourseID, CourseName;
     private int Credit;
-    private int Semester;
+    private String Room;
 
-    public RegisterRec(String LecturerID, String CourseID, String CourseName, int Credit, int Semester){
+    public RegisterRec(String CourseID, String CourseName, int Credit, String Room) {
         this.CourseID = CourseID;
-        this.Credit = Credit;
-        this.LecturerID = LecturerID;
-        this.Semester = Semester;
         this.CourseName = CourseName;
-
+        this.Credit = Credit;
+        this.Room = Room;
     }
 
-
-    public String getLecturerID() {return LecturerID;}
-
-    public void setLecturerID(String LecturerID) {
-        this.LecturerID = LecturerID;
-    }
-
-    public String getCourseID() {return CourseID;}
-
-    public void setCourseID(String courseID) {
-        this.CourseID = CourseID;
+    public String getCourseID() {
+        return CourseID;
     }
 
     public String getCourseName() {
         return CourseName;
     }
 
-    public void setCourseName(String courseName) {
-        this.CourseName = CourseName;
-    }
-
     public int getCredit() {
         return Credit;
     }
 
-    public void setCredit(Integer Credit) {
-        this.Credit = Credit;
+    public String getRoom() {
+        return Room;
     }
 
-    public int getSemester() {
-        return Semester;
+    public void setCourseID(String courseID) {
+        CourseID = courseID;
     }
 
-    public void setSemester(int Semester) {
-        this.Semester = Semester;
+    public void setCourseName(String courseName) {
+        CourseName = courseName;
     }
 
+    public void setCredit(int credit) {
+        Credit = credit;
+    }
 
-
+    public void setRoom(String room) {
+        Room = room;
+    }
 }
+

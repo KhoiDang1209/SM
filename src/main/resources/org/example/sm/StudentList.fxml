@@ -20,17 +20,19 @@
                     </font>
                 </Label>
                 <Button fx:id="view" layoutX="472.0" layoutY="100.0" mnemonicParsing="false" onAction="#View" text="View" />
-                <TableView fx:id="studentView" layoutX="13.0" layoutY="173.0" prefHeight="305.0" prefWidth="864.0">
+                <TableView fx:id="studentView" layoutX="72.0" layoutY="157.0" prefHeight="362.0" prefWidth="740.0">
                     <columns>
                         <TableColumn fx:id="stuidCol" prefWidth="102.40001678466797" text="StudentID" />
                         <TableColumn fx:id="stunameCol" prefWidth="155.19998168945312" text="StudentName" />
-                        <TableColumn fx:id="genderCol" prefWidth="84.0" text="Gender" />
-                        <TableColumn fx:id="majorCol" prefWidth="207.19998168945312" text="Major" />
-                        <TableColumn fx:id="emailCol" prefWidth="255.19989013671875" text="Email" />
-                        <TableColumn fx:id="levelCol" prefWidth="64.7999267578125" text="Level" />
+                        <TableColumn fx:id="progress" onEditCommit="#setupProgressEditing" prefWidth="84.0" text="Progress" />
+                        <TableColumn fx:id="midterm" onEditCommit="#setupMidtermEditing" prefWidth="91.99993896484375" text="Midterm" />
+                        <TableColumn fx:id="finalG" onEditCommit="#setupFinalGEditing" prefWidth="91.20001220703125" text="Final" />
+                        <TableColumn fx:id="overallG" prefWidth="99.99993896484375" text="Overall" />
+                  <TableColumn fx:id="overallC" prefWidth="109.5999755859375" text="Overall Character" />
                     </columns>
                 </TableView>
                 <Button fx:id="Back" layoutX="41.0" layoutY="39.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+            <Button fx:id="refresh" layoutX="820.0" layoutY="185.0" mnemonicParsing="false" onAction="#View" text="Refresh" />
             </children>
         </Pane>
     </children>

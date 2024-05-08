@@ -6,8 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="baa8bb28-9ce7-4adc-89f7-3043bbc1fdf6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Annouce.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LecturerInfo/LecturerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LecturerInfo/LecturerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Register/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Register/RegisterRec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Register/RegisterRec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/StudentListLec/StudentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/StudentListLec/StudentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/StudentListLec/StudentListRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/StudentListLec/StudentListRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/StudentPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/StudentPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTableRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTableRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Annouce.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/StudentList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/StudentList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/StudentPlatform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/StudentPlatform.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/TimeTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/TimeTable.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +50,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/KhoiDang1209/SM.git&quot;,
-    &quot;accountId&quot;: &quot;de95a987-1ddd-4c6d-8f7a-8f39f1848b4b&quot;
+    &quot;accountId&quot;: &quot;31c657a0-d3d4-422f-a709-688d67dd85a0&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -68,14 +83,14 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;D:/OOP Project/SM/src/main/java/org/example/sm&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/githubdownload/SM-master (4)/SM-master/src/main/java/module-info.java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/.openjfx&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.37011495&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
@@ -128,8 +143,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -175,6 +190,9 @@
       <workItem from="1714894453594" duration="19000" />
       <workItem from="1714907115683" duration="1049000" />
       <workItem from="1714908572425" duration="86000" />
+      <workItem from="1714912087872" duration="2281000" />
+      <workItem from="1714968686700" duration="6255000" />
+      <workItem from="1715141586249" duration="4295000" />
     </task>
     <servers />
   </component>

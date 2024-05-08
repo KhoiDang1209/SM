@@ -38,4 +38,6 @@ module org.example.sm {
     opens Controller.AnnounceEmail to javafx.fxml;
     exports Controller.LecturerInfo;
     opens Controller.LecturerInfo to javafx.fxml;
+    exports Controller.TimetableLec;
+    opens Controller.TimetableLec to javafx.fxml;
 }

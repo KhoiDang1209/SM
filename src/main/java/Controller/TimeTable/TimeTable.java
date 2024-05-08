@@ -37,6 +37,10 @@ public class TimeTable {
     private TableColumn<TimeTableRecord, String> CourseNameCol;
     @FXML
     private TableColumn<TimeTableRecord, String> DayOfWeekCol;
+    @FXML
+    private TableColumn<TimeTableRecord, Time> LabStartTimeCol;
+    @FXML
+    private TableColumn<TimeTableRecord, Time> LabEndTimeCol;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -59,26 +63,32 @@ public class TimeTable {
         EndTimeCol.setCellValueFactory(new PropertyValueFactory<>("EndTime"));
         RoomCol.setCellValueFactory(new PropertyValueFactory<>("Room"));
         DayOfWeekCol.setCellValueFactory(new PropertyValueFactory<>("Day_of_Week"));
+        LabStartTimeCol.setCellValueFactory(new PropertyValueFactory<>("LabStartTime"));
+        LabEndTimeCol.setCellValueFactory(new PropertyValueFactory<>("LabEndTime"));
         if(cn!=null)
         {
-            String query = "SELECT s.StudentID, c.Day_of_Week, c.CourseName, c.Start_Time, c.End_Time, c.Room, c.CourseID " +
+            String query = "SELECT s.StudentID, c.Day_of_Week, c.CourseName, c.Start_Time, c.End_Time, c.Room, c.CourseID, L.Start_Time as Lab_Start_Time, L.End_Time as Lab_End_Time " +
                     "FROM Student s " +
                     "INNER JOIN Enroll er ON s.StudentID = er.StudentID " +
                     "INNER JOIN Course c ON er.CourseID = c.CourseID " +
-                    "WHERE s.StudentID = ?";            try (PreparedStatement pstmt = cn.prepareStatement(query)) {
-                pstmt.setString(1,username );
+                    "LEFT JOIN Lab L ON L.CourseID = c.CourseID " +
+                    "WHERE s.StudentID = ?";
+            try (PreparedStatement pstmt = cn.prepareStatement(query)) {
+                pstmt.setString(1, username);
                 try (ResultSet rs = pstmt.executeQuery()) {
-                    ObservableList<TimeTableRecord> TimeTableRecord = FXCollections.observableArrayList();
+                    ObservableList<TimeTableRecord> timeTableRecords = FXCollections.observableArrayList();
                     while (rs.next()) {
-                        String Day_of_Week = rs.getString("Day_of_Week");
-                        String CourseID = rs.getString("CourseID");
-                        String CourseName = rs.getString("CourseName");
-                        Time StartTime = rs.getTime("Start_Time");
-                        Time EndTime = rs.getTime("End_Time");
-                        String Room = rs.getString("Room");
-                        TimeTableRecord.add(new TimeTableRecord(CourseID,CourseName,StartTime, EndTime, Room, Day_of_Week));
+                        String dayOfWeek = rs.getString("Day_of_Week");
+                        String courseID = rs.getString("CourseID");
+                        String courseName = rs.getString("CourseName");
+                        Time startTime = rs.getTime("Start_Time");
+                        Time endTime = rs.getTime("End_Time");
+                        String room = rs.getString("Room");
+                        Time labStartTime = rs.getTime("Lab_Start_Time");
+                        Time labEndTime = rs.getTime("Lab_End_Time");
+                        timeTableRecords.add(new TimeTableRecord(courseID, courseName, startTime, endTime, room, dayOfWeek, labStartTime, labEndTime));
                     }
-                    TimeTable.setItems(TimeTableRecord);
+                    TimeTable.setItems(timeTableRecords);
                 }
             }
         }

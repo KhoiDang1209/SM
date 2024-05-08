@@ -50,6 +50,16 @@ public class InstructorPlatform {
     public void openLink5(ActionEvent event) throws URISyntaxException, IOException {
         Desktop.getDesktop().browse(new URI("https://scontent.xx.fbcdn.net/v/t1.15752-9/439991678_1153287282488064_1536089699606818016_n.png?stp=dst-png_p403x403&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ypb147wFEwsQ7kNvgF5WAYe&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QGRRLVC0bG-KLVW3HMtQjxT1fiX8ArD3i_5pXyWTeK3CQ&oe=665ED36F"));
     }
+
+    public void openLink6(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://edusoftweb.hcmiu.edu.vn/default.aspx?page=chitietthongtin&id=1385"));
+    }
+    public void openLink7(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://edusoftweb.hcmiu.edu.vn/default.aspx?page=chitietthongtin&id=1409"));
+    }
+    public void openLink8(ActionEvent event) throws URISyntaxException, IOException {
+        Desktop.getDesktop().browse(new URI("https://edusoftweb.hcmiu.edu.vn/default.aspx?page=chitietthongtin&id=1372"));
+    }
     private void loadScene(String fxmlFile, ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlFile));
         Parent root = loader.load();
@@ -69,8 +79,8 @@ public class InstructorPlatform {
         loadScene("StudentList.fxml", event);
     }
 
-    public void GradingLec (ActionEvent event) throws IOException {
-        loadScene("Grades.fxml", event);
+    public void TimetableLec (ActionEvent event) throws IOException {
+        loadScene("TimetableLec.fxml", event);
     }
 
     public void AnnounceLec (ActionEvent event) throws IOException {

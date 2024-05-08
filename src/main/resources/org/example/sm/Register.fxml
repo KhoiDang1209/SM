@@ -15,24 +15,16 @@
          <children>
             <ButtonBar prefHeight="40.0" prefWidth="844.0" />
             <Button layoutX="42.0" layoutY="40.0" mnemonicParsing="false" onAction="#Back" text="Back" />
-            <TableView layoutX="23.0" layoutY="123.0" prefHeight="378.0" prefWidth="844.0">
+            <TableView fx:id="TableView" layoutX="23.0" layoutY="123.0" prefHeight="177.0" prefWidth="844.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Course ID" />
-                <TableColumn prefWidth="75.0" text="Lecture ID" />
-                  <TableColumn prefWidth="75.0" text="Course Name" />
-                  <TableColumn prefWidth="75.0" text="Credit" />
-                  <TableColumn prefWidth="75.0" text="Room" />
-                  <TableColumn prefWidth="75.0" text="Start Day" />
-                  <TableColumn prefWidth="75.0" text="End Day" />
-                  <TableColumn prefWidth="75.0" text="Start Time" />
-                  <TableColumn prefWidth="75.0" text="End Time" />
-                  <TableColumn prefWidth="75.0" text="Day " />
-                  <TableColumn prefWidth="75.0" text="Semester" />
+                <TableColumn fx:id="CourseIDColumn" prefWidth="75.0" text="Course ID" />
+                  <TableColumn fx:id="CourseNameColumn" prefWidth="100.80000305175781" text="Course Name" />
+                  <TableColumn fx:id="CreditColumn" prefWidth="76.0" text="Credit" />
+                  <TableColumn fx:id="RoomColumn" prefWidth="460.7999267578125" text="Room" />
               </columns>
             </TableView>
-            <Label layoutX="42.0" layoutY="85.0" text="Filter by subject" />
-            <TextField layoutX="134.0" layoutY="81.0" promptText="subject" />
-            <Button layoutX="293.0" layoutY="81.0" mnemonicParsing="false" text="View" />
+            <Label layoutX="42.0" layoutY="85.0" text="Filter by course name:" />
+            <TextField fx:id="filterTextField" layoutX="169.0" layoutY="81.0" prefHeight="25.0" prefWidth="195.0" promptText="Course name" />
          </children>
       </Pane>
    </children>
