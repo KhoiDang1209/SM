@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baa8bb28-9ce7-4adc-89f7-3043bbc1fdf6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_2_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_4_2024_2_59_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Register/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Register/Register.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Register/RegisterRec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Register/RegisterRec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Register.fxml" afterDir="false" />
@@ -180,7 +180,12 @@
       <workItem from="1714968686700" duration="6255000" />
       <workItem from="1715141586249" duration="4295000" />
       <workItem from="1715145999068" duration="610000" />
-      <workItem from="1715178846472" duration="246000" />
+      <workItem from="1715178846472" duration="6074000" />
+      <workItem from="1715191625788" duration="154000" />
+      <workItem from="1715191789309" duration="21000" />
+      <workItem from="1715218979591" duration="2124000" />
+      <workItem from="1715262194100" duration="2032000" />
+      <workItem from="1715264254077" duration="2070000" />
     </task>
     <servers />
   </component>

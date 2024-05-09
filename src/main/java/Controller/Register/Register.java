@@ -3,6 +3,7 @@ package Controller.Register;
 import Controller.DatabaseConnection;
 import Controller.StudentPlatform;
 import image.BackGroundScene;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -15,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -40,6 +42,8 @@ public class Register implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+
 
     public void displayStuName(String id)
     {
@@ -76,17 +80,19 @@ public class Register implements Initializable {
     private TableColumn<RegisterRec, Time> StartColumn;
     @FXML
     private TableColumn<RegisterRec, Time> EndColumn;
-
+    @FXML
+    private TableColumn<RegisterRec, CheckBox> SelectColumn;
     @FXML
     private TextField filterTextField;
     @FXML
-    private TableColumn tickColumn = new TableColumn("Action");
-    //    private TableColumn<RegisterRec, CheckBox> tickColumn;
+
     ObservableList<RegisterRec> RegisterRecObservableList = FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resource) {
+
+
 
 
 
@@ -111,11 +117,11 @@ public class Register implements Initializable {
                 String queryDay = queryOutput.getString("Day_of_Week");
                 Time queryStart = queryOutput.getTime("Start_Time");
                 Time queryEnd = queryOutput.getTime("End_Time");
-                CheckBox queryCheck = new CheckBox(queryCourseID);
+                
 
 
-                RegisterRecObservableList.add(new RegisterRec(queryCourseID, queryCourseName, queryCredit, queryRoom, queryLecturerName, queryDay, queryStart, queryEnd, queryCheck));
-
+                RegisterRecObservableList.add(new RegisterRec(queryCourseID, queryCourseName, queryCredit, queryRoom, queryLecturerName, queryDay, queryStart, queryEnd));
+//
             }
 
 
@@ -128,10 +134,12 @@ public class Register implements Initializable {
             EndColumn.setCellValueFactory(new PropertyValueFactory<>("End"));
             DayColumn.setCellValueFactory(new PropertyValueFactory<>("Day"));
             StartColumn.setCellValueFactory(new PropertyValueFactory<>("Start"));
+            SelectColumn.setCellValueFactory(new PropertyValueFactory<>("Select"));
+
 
 
             TableView.setItems(RegisterRecObservableList);
-
+            TableView.getColumns().add(SelectColumn);
             FilteredList<RegisterRec> filteredData = new FilteredList<>(RegisterRecObservableList, b -> true);
             filterTextField.textProperty().addListener((observable, oldValue, newValue) -> {
                 filteredData.setPredicate(RegisterRec ->{

@@ -1,5 +1,7 @@
 package Controller.Register;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 
@@ -13,10 +15,11 @@ public class RegisterRec {
     private Time Start;
     private Time End;
     private String Day;
+    private CheckBox select;
 
-    private CheckBox Action;
 
-    public RegisterRec(String CourseID, String CourseName, int Credit, String Room, String LecturerName, String Day, Time Start, Time End, CheckBox Action) {
+
+    public RegisterRec(String CourseID, String CourseName, int Credit, String Room, String LecturerName, String Day, Time Start, Time End) {
         this.CourseID = CourseID;
         this.CourseName = CourseName;
         this.Credit = Credit;
@@ -25,13 +28,17 @@ public class RegisterRec {
         this.Start = Start;
         this.End = End;
         this.Day = Day;
-        this.Action = new CheckBox();
+        this.select = new CheckBox();
 
     }
 
 
-    public CheckBox getAction() {
-        return Action;
+    public CheckBox getSelect() {
+        return select;
+    }
+
+    public void setSelect(CheckBox select) {
+        this.select = select;
     }
 
     public Time getStart() {
@@ -67,9 +74,8 @@ public class RegisterRec {
     }
 
 
-    public void setAction(CheckBox action) {
-        Action = action;
-    }
+
+
 
     public void setStart(Time start) {
         Start = start;
