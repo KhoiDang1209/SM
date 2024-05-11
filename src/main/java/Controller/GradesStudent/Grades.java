@@ -128,7 +128,7 @@ public class Grades implements Initializable {
                     String queryCourseID = queryOutput.getString("CourseID");
                     String queryCourseName = queryOutput.getString("CourseName");
                     int queryCredit = queryOutput.getInt("Credit");
-                    int querySemester = queryOutput.getInt("Semester");
+                    String querySemester = queryOutput.getString("Semester");
                     int queryProgress = queryOutput.getInt("Progress");
                     int queryMidterm = queryOutput.getInt("Midterm");
                     int queryFinalMark = queryOutput.getInt("Final");
@@ -209,7 +209,7 @@ public class Grades implements Initializable {
                     String queryCourseID = queryOutput.getString("CourseID");
                     String queryCourseName = queryOutput.getString("CourseName");
                     int queryCredit = queryOutput.getInt("Credit");
-                    int querySemester = queryOutput.getInt("Semester");
+                    String querySemester = queryOutput.getString("Semester");
                     int queryProgress = queryOutput.getInt("Progress");
                     int queryMidterm = queryOutput.getInt("Midterm");
                     int queryFinalMark = queryOutput.getInt("Final");

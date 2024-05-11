@@ -1,15 +1,14 @@
 package Controller.GradesStudent;
 
 public class GradesModel {
-    private String studentID, courseID, courseName, overallMarkCharacter;
+    private String studentID, courseID, courseName, overallMarkCharacter, semester;
     private int credit;
-    private int semester;
     private int progressMark;
     private int midtermMark;
     private int finalMark;
     private int overallMark;
 
-    public GradesModel(String studentID, String courseID, String courseName, int credit, int semester, int progressMark, int midtermMark, int finalMark, int overallMark, String overallMarkCharacter) {
+    public GradesModel(String studentID, String courseID, String courseName, int credit, String semester, int progressMark, int midtermMark, int finalMark, int overallMark, String overallMarkCharacter) {
         this.studentID = studentID;
         this.courseID = courseID;
         this.courseName = courseName;
@@ -46,11 +45,11 @@ public class GradesModel {
         return credit;
     }
 
-    public int getSemester() {
+    public String getSemester() {
         return semester;
     }
 
-    public void setSemester(int semester) {
+    public void setSemester(String semester) {
         this.semester = semester;
     }
 
