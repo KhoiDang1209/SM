@@ -30,8 +30,9 @@
                      <columns>
                         <TableColumn fx:id="StuIDColumn" prefWidth="137.59999084472656" text="StudentID" />
                         <TableColumn fx:id="TuiIDColumn" prefWidth="166.39996337890625" text="TuitionID" />
-                        <TableColumn fx:id="AmountColumn" prefWidth="168.800048828125" text="Amount" />
-                        <TableColumn fx:id="payDateColumn" prefWidth="195.199951171875" text="PaymentDate" />
+                        <TableColumn fx:id="AmountColumn" prefWidth="132.79998779296875" text="Amount" />
+                        <TableColumn fx:id="payDateColumn" prefWidth="113.60003662109375" text="PaymentDate" />
+                        <TableColumn fx:id="Semester" prefWidth="117.60003662109375" text="Semester" />
                      </columns>
                   </TableView>
                   <Label fx:id="stuidInfo" layoutX="42.0" layoutY="14.0" text="Label">

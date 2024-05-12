@@ -7,12 +7,13 @@ public class TuitionRecord extends Tuition {
     private String tuitionID;
     private int amount;
     private Date paymentDate;
-
-    public TuitionRecord(String studentID, String tuitionID, int amount, Date paymentDate) {
+    private String semester;
+    public TuitionRecord(String studentID, String tuitionID, int amount, Date paymentDate,String semester) {
         this.studentID = studentID;
         this.tuitionID = tuitionID;
         this.amount = amount;
         this.paymentDate = paymentDate;
+        this.semester = semester;
     }
     public void setStudentID(String studentID) {}
     public void setTuitionID(String tuitionID) {}
@@ -22,6 +23,7 @@ public class TuitionRecord extends Tuition {
     public String getTuitionID() {return tuitionID;}
     public int getAmount() {return amount;}
     public Date getPaymentDate() {return paymentDate;}
+    public String getSemester() {return semester;}
     // Getters and setters
 }
 

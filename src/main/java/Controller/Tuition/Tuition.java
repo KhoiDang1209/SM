@@ -36,6 +36,7 @@ public class Tuition {
     int amount;
     Date payDate=null;
     String classInfo=null;
+    String semester=null;
     @FXML
     private TableView<TuitionRecord> tuitionTable;
     @FXML
@@ -46,6 +47,8 @@ public class Tuition {
     private TableColumn <TuitionRecord,Integer> AmountColumn;
     @FXML
     private TableColumn <TuitionRecord,Date> payDateColumn;
+    @FXML
+    private TableColumn <TuitionRecord,String> Semester;
     @FXML
     private CheckBox ShowHistory;
     @FXML
@@ -91,6 +94,7 @@ public class Tuition {
         TuiIDColumn.setCellValueFactory(new PropertyValueFactory<>("tuitionID"));
         AmountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         payDateColumn.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
+        Semester.setCellValueFactory(new PropertyValueFactory<>("semester"));
         tuitionPane.setVisible(false);
     }
     public void ShowHistoryAction() throws SQLException
@@ -100,7 +104,7 @@ public class Tuition {
         {
             Connection cn = DatabaseConnection.getConnection();
             if (cn != null) {
-                String queryTuition = "SELECT s.StudentID, s.Name, s.DateOfBirth, s.Class, t.TuitionID, t.Amount, t.PaymentDate \n" +
+                String queryTuition = "SELECT s.StudentID, s.Name, s.DateOfBirth, s.Class, t.TuitionID, t.Amount, t.PaymentDate, t.Semester \n" +
                         "FROM Student AS s\n" +
                         "JOIN Tuition AS t ON s.StudentID = t.StudentID\n" +
                         "WHERE s.StudentID = ?;\n";
@@ -116,11 +120,12 @@ public class Tuition {
                             tuiid=rs.getString("TuitionID");
                             amount = rs.getInt("Amount");
                             payDate = rs.getDate("PaymentDate");
+                            semester=rs.getString("Semester");
                             setStuidInfo(stuid);
                             setNameInfo(name);
                             setDoBInfo(date);
                             setClassInfo(classInfo);
-                            tuitionRecords.add(new TuitionRecord(stuid, tuiid, amount, payDate));
+                            tuitionRecords.add(new TuitionRecord(stuid, tuiid, amount, payDate,semester));
                             }
                         tuitionTable.setItems(tuitionRecords);
                         tuitionPane.setVisible(true);

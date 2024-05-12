@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="baa8bb28-9ce7-4adc-89f7-3043bbc1fdf6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0573fbea-feae-46f3-8e81-c237e7794ad2/storage_v2/_src_/database/SM_PDM.dLELkg/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0573fbea-feae-46f3-8e81-c237e7794ad2/storage_v2/_src_/database/SM_PDM.dLELkg/schema/dbo.sYMBAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0573fbea-feae-46f3-8e81-c237e7794ad2/storage_v2/_src_/database/SM_PDM.dLELkg/schema/dbo.sYMBAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0573fbea-feae-46f3-8e81-c237e7794ad2/storage_v2/_src_/database/SM_PDM.dLELkg/schema/dbo.sYMBAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ExamStu/ExamDateStu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ExamStu/ExamDateStu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/InstructorPlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/StudentListLec/StudentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/StudentListLec/StudentList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/TimeTable/TimeTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Tuition/Tuition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Tuition/Tuition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/InstructorPlatform.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Tuition/TuitionRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Tuition/TuitionRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/sm/Tuition.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/sm/Tuition.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +188,7 @@
       <workItem from="1715218979591" duration="2124000" />
       <workItem from="1715262194100" duration="2032000" />
       <workItem from="1715264254077" duration="2070000" />
-      <workItem from="1715484976989" duration="6270000" />
+      <workItem from="1715484976989" duration="7174000" />
     </task>
     <servers />
   </component>
