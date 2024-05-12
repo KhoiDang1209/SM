@@ -100,7 +100,10 @@ public class Tuition {
         {
             Connection cn = DatabaseConnection.getConnection();
             if (cn != null) {
-                String queryTuition = "SELECT s.StudentID, s.Name,s.DateOfBirth,s.Class,t.TuitionID, t.Amount,t.PaymentDate FROM Student as s,Tuition as t WHERE s.StudentID=?";
+                String queryTuition = "SELECT s.StudentID, s.Name, s.DateOfBirth, s.Class, t.TuitionID, t.Amount, t.PaymentDate \n" +
+                        "FROM Student AS s\n" +
+                        "JOIN Tuition AS t ON s.StudentID = t.StudentID\n" +
+                        "WHERE s.StudentID = ?;\n";
                 try (PreparedStatement pstmt = cn.prepareStatement(queryTuition)) {
                     pstmt.setString(1, username);
                     try (ResultSet rs = pstmt.executeQuery()) {

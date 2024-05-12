@@ -86,11 +86,6 @@ public class InstructorPlatform {
     public void AnnounceLec (ActionEvent event) throws IOException {
         loadScene("Announce.fxml", event);
     }
-
-    public void ExamDateStu (ActionEvent event) throws IOException {
-        loadScene("ExamDateStu.fxml", event);
-    }
-
     public void Personal(ActionEvent event) throws IOException {
         loadScene("Lecinfo.fxml", event);
     }

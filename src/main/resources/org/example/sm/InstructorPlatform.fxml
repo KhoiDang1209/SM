@@ -19,7 +19,6 @@
                   <Button mnemonicParsing="false" onAction="#StudentList" text="Grading student" />
                   <Button mnemonicParsing="false" onAction="#AnnounceLec" text="Annouce" />
                   <Button mnemonicParsing="false" onAction="#TimetableLec" text="Timetable" />
-                  <Button mnemonicParsing="false" text="ExamDate" />
                   <Button mnemonicParsing="false" onAction="#Personal" prefHeight="26.0" prefWidth="142.0" text="Personal Information" />
                </buttons>
             </ButtonBar>

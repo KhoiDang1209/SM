@@ -78,7 +78,10 @@ public class StudentList {
     public void View() throws SQLException {
         Connection cn = DatabaseConnection.getConnection();
         String selectedcourse=courseBox.getValue();
-        String queryStudent="Select s.StudentID, s.Name, er.Progress, er.Midterm, er.Final, er.Overall, er.OverallCharacter from Student as s, Enroll as er where er.CourseID=? and er.StudentID=s.StudentID and er.Semester='II-2023'";
+        String queryStudent="SELECT s.StudentID, s.Name, er.Progress, er.Midterm, er.Final, er.Overall, er.OverallCharacter \n" +
+                "FROM Student AS s\n" +
+                "JOIN Enroll AS er ON s.StudentID = er.StudentID\n" +
+                "WHERE er.CourseID = ? AND er.Semester = 'II-2023';\n";
         try(PreparedStatement ps=cn.prepareStatement(queryStudent))
         {
             ps.setString(1,selectedcourse);

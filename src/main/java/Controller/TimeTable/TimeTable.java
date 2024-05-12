@@ -1,6 +1,7 @@
 package Controller.TimeTable;
 
 import Controller.DatabaseConnection;
+import Controller.StudentPlatform;
 import image.BackGroundScene;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -56,6 +57,8 @@ public class TimeTable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BackGroundScene backGroundScene = new BackGroundScene();
         StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
+        StudentPlatform studentController = Back.getController();
+        studentController.displayStuName(username);
         scene = new Scene(stackPane);
         stage.setScene(scene);
         stage.show();

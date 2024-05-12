@@ -102,7 +102,12 @@ public class ExamDateStu {
         examroomCol.setCellValueFactory(new PropertyValueFactory<>("examRoom"));
         if(cn!=null)
         {
-            String query="SELECT s.StudentID, s.Name, s.DateOfBirth, s.Gender, s.Major, s.Class, s.Email, s.Level, ex.CourseID, c.CourseName ,ex.ExamDate,ex.ExamTime, ex.ExamRoom FROM Student as s, Exam as ex, Enroll as er, Course as c WHERE s.StudentID=? and s.StudentID=er.StudentID and er.CourseID=ex.CourseID and er.CourseID=c.CourseID";
+            String query="SELECT s.StudentID, s.Name, s.DateOfBirth, s.Gender, s.Major, s.Class, s.Email, s.Level, ex.CourseID, c.CourseName, ex.ExamDate, ex.ExamTime, ex.ExamRoom \n" +
+                    "FROM Student AS s\n" +
+                    "JOIN Enroll AS er ON s.StudentID = er.StudentID\n" +
+                    "JOIN Course AS c ON er.CourseID = c.CourseID\n" +
+                    "JOIN Exam AS ex ON er.CourseID = ex.CourseID\n" +
+                    "WHERE s.StudentID = ? AND er.Semester = 'II-2023';\n";
             try (PreparedStatement pstmt = cn.prepareStatement(query)) {
                 pstmt.setString(1,username );
                 try (ResultSet rs = pstmt.executeQuery()) {
