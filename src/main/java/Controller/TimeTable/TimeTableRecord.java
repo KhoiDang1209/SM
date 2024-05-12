@@ -1,5 +1,6 @@
 package Controller.TimeTable;
 
+import java.sql.Date;
 import java.sql.Time;
 
 public class TimeTableRecord {
@@ -13,7 +14,7 @@ public class TimeTableRecord {
     private Time LabEndTime;
     private String LabDay;
 
-    public TimeTableRecord(String courseID, String courseName, Time StartTime, Time EndTime, String Room, String Day_of_Week, Time LabStartTime, Time LabEndTime, String LabDay) {
+    public TimeTableRecord(String courseID, String courseName, Time StartTime, Time EndTime, String Room, String Day_of_Week,Time LabStartTime, Time LabEndTime, String LabDay) {
         this.courseID = courseID;
         this.StartTime = StartTime;
         this.EndTime = EndTime;

@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -43,7 +44,8 @@ public class TimeTable {
     private TableColumn<TimeTableRecord, Time> LabEndTimeCol;
     @FXML
     private TableColumn<TimeTableRecord, String> LabDayCol;
-
+    @FXML
+    private ComboBox<String> Semester;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -58,18 +60,9 @@ public class TimeTable {
         stage.setScene(scene);
         stage.show();
     }
-    public void initialize() throws SQLException {
+    public void View() throws SQLException {
         Connection cn = DatabaseConnection.getConnection();
-        CourseIDCol.setCellValueFactory(new PropertyValueFactory<>("CourseID"));
-        CourseNameCol.setCellValueFactory(new PropertyValueFactory<>("CourseName"));
-        StartTimeCol.setCellValueFactory(new PropertyValueFactory<>("StartTime"));
-        EndTimeCol.setCellValueFactory(new PropertyValueFactory<>("EndTime"));
-        RoomCol.setCellValueFactory(new PropertyValueFactory<>("Room"));
-        DayOfWeekCol.setCellValueFactory(new PropertyValueFactory<>("Day_of_Week"));
-        LabStartTimeCol.setCellValueFactory(new PropertyValueFactory<>("LabStartTime"));
-        LabEndTimeCol.setCellValueFactory(new PropertyValueFactory<>("LabEndTime"));
-        LabDayCol.setCellValueFactory(new PropertyValueFactory<>("LabDay"));
-
+        String selectedSemester=Semester.getValue();
         if(cn!=null)
         {
             String query = "SELECT s.StudentID, c.Day_of_Week, c.CourseName, c.Start_Time, c.End_Time, c.Room, c.CourseID, L.Start_Time as Lab_Start_Time, L.End_Time as Lab_End_Time, L.Day_of_Week as Lab_Day " +
@@ -77,9 +70,10 @@ public class TimeTable {
                     "INNER JOIN Enroll er ON s.StudentID = er.StudentID " +
                     "INNER JOIN Course c ON er.CourseID = c.CourseID " +
                     "LEFT JOIN Lab L ON L.CourseID = c.CourseID " +
-                    "WHERE s.StudentID = ?";
+                    "WHERE s.StudentID = ? and er.Semester=?";
             try (PreparedStatement pstmt = cn.prepareStatement(query)) {
                 pstmt.setString(1, username);
+                pstmt.setString(2, selectedSemester);
                 try (ResultSet rs = pstmt.executeQuery()) {
                     ObservableList<TimeTableRecord> timeTableRecords = FXCollections.observableArrayList();
                     while (rs.next()) {
@@ -95,6 +89,34 @@ public class TimeTable {
                         timeTableRecords.add(new TimeTableRecord(courseID, courseName, startTime, endTime, room, dayOfWeek, labStartTime, labEndTime, labDay));
                     }
                     TimeTable.setItems(timeTableRecords);
+                }
+            }
+        }
+        TimeTable.setVisible(true);
+    }
+    public void initialize() throws SQLException {
+        Connection cn = DatabaseConnection.getConnection();
+        CourseIDCol.setCellValueFactory(new PropertyValueFactory<>("CourseID"));
+        CourseNameCol.setCellValueFactory(new PropertyValueFactory<>("CourseName"));
+        StartTimeCol.setCellValueFactory(new PropertyValueFactory<>("StartTime"));
+        EndTimeCol.setCellValueFactory(new PropertyValueFactory<>("EndTime"));
+        RoomCol.setCellValueFactory(new PropertyValueFactory<>("Room"));
+        DayOfWeekCol.setCellValueFactory(new PropertyValueFactory<>("Day_of_Week"));
+        LabStartTimeCol.setCellValueFactory(new PropertyValueFactory<>("LabStartTime"));
+        LabEndTimeCol.setCellValueFactory(new PropertyValueFactory<>("LabEndTime"));
+        LabDayCol.setCellValueFactory(new PropertyValueFactory<>("LabDay"));
+
+        TimeTable.setVisible(false);
+        if(cn!=null)
+        {
+            String querySemster = "SELECT er.Semester FROM Enroll as er WHERE er.studentID = ? group by er.Semester";
+            try (PreparedStatement pstmt = cn.prepareStatement(querySemster)) {
+                pstmt.setString(1, username);
+                try (ResultSet rs = pstmt.executeQuery()) {
+                    while (rs.next()) {
+                        String semester = rs.getString("Semester");
+                        Semester.getItems().add(semester);
+                    }
                 }
             }
         }
