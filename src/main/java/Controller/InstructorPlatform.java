@@ -1,6 +1,6 @@
 package Controller;
-
-import Controller.CourseLec.CourseLec;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import image.BackGroundScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.example.sm.Main;
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
@@ -79,15 +78,39 @@ public class InstructorPlatform {
         loadScene("StudentList.fxml", event);
     }
 
-    public void TimetableLec (ActionEvent event) throws IOException {
-        loadScene("TimetableLec.fxml", event);
-    }
-
     public void AnnounceLec (ActionEvent event) throws IOException {
         loadScene("Announce.fxml", event);
     }
     public void Personal(ActionEvent event) throws IOException {
         loadScene("Lecinfo.fxml", event);
     }
+    public void LogOut(ActionEvent event) throws IOException {
+            // Create a confirmation alert
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setHeaderText("Are you sure you want to log out?");
 
+            // Add OK and Cancel buttons
+            alert.getButtonTypes().clear();
+            alert.getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+
+            // Handle event when user clicks OK button
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    try {
+                        // Load the login page
+                        FXMLLoader loader = new FXMLLoader(Main.class.getResource("Login.fxml"));
+                        Parent root = loader.load();
+                        BackGroundScene backGroundScene = new BackGroundScene();
+                        StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        Scene scene1=new Scene(stackPane);
+                        stage.setScene(scene1);
+                        stage.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+    }
 }

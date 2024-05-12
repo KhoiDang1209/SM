@@ -13,12 +13,11 @@
    <children>
       <Pane layoutX="80.0" layoutY="147.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
-            <ButtonBar prefHeight="40.0" prefWidth="844.0">
+            <ButtonBar layoutX="69.0" prefHeight="40.0" prefWidth="729.0">
                <buttons>
-                  <Button fx:id="Course" mnemonicParsing="false" onAction="#CourseLecinfo" text="Course" textAlignment="CENTER" />
+                  <Button fx:id="Course" mnemonicParsing="false" onAction="#CourseLecinfo" prefHeight="26.0" prefWidth="297.0" text="Timetable" textAlignment="CENTER" />
                   <Button mnemonicParsing="false" onAction="#StudentList" text="Grading student" />
                   <Button mnemonicParsing="false" onAction="#AnnounceLec" text="Annouce" />
-                  <Button mnemonicParsing="false" onAction="#TimetableLec" text="Timetable" />
                   <Button mnemonicParsing="false" onAction="#Personal" prefHeight="26.0" prefWidth="142.0" text="Personal Information" />
                </buttons>
             </ButtonBar>
@@ -72,5 +71,6 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
+      <Button layoutX="837.0" layoutY="99.0" mnemonicParsing="false" onAction="#LogOut" text="Log out" />
    </children>
 </AnchorPane>

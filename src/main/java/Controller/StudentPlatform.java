@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
@@ -91,5 +93,34 @@ public class StudentPlatform {
 
     public void Calendar (ActionEvent event) throws IOException {
         loadScene("TimeTable.fxml", event);
+    }
+    public void LogOut(ActionEvent event) throws IOException {
+        // Create a confirmation alert
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Are you sure you want to log out?");
+
+        // Add OK and Cancel buttons
+        alert.getButtonTypes().clear();
+        alert.getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+
+        // Handle event when user clicks OK button
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                try {
+                    // Load the login page
+                    FXMLLoader loader = new FXMLLoader(Main.class.getResource("Login.fxml"));
+                    Parent root = loader.load();
+                    BackGroundScene backGroundScene = new BackGroundScene();
+                    StackPane stackPane = new StackPane(backGroundScene.getBackgroundView(), root);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene1=new Scene(stackPane);
+                    stage.setScene(scene1);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

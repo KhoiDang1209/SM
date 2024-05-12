@@ -73,5 +73,6 @@
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
+      <Button layoutX="844.0" layoutY="89.0" mnemonicParsing="false" onAction="#LogOut" text="Log out" />
    </children>
 </AnchorPane>
