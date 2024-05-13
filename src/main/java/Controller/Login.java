@@ -1,5 +1,6 @@
 package Controller;
 
+import Controller.Admin.Admin;
 import image.BackGroundScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,8 +33,8 @@ public class Login {
         String password = passTextField.getText();
         if (username.equals("1") && password.equals("1")) {
             openStudentPlatform(username, event);
-        } else if (username.equals("2") && password.equals("2")) {
-            openInstructorPlatform(username, event);
+        } else if (username.equals("admin") && password.equals("123")) {
+            openAdminPlatform(username, event);
         } else {
             try (Connection cn = DatabaseConnection.getConnection()) {
                 if (cn != null) {
@@ -97,7 +98,13 @@ public class Login {
         instructorController.displayInsName(username);
         openPlatform(root, event);
     }
-
+    private void openAdminPlatform(String username, ActionEvent event) throws IOException {
+        FXMLLoader adminLoader = new FXMLLoader(Main.class.getResource("Admin.fxml"));
+        Parent root = adminLoader.load();
+        Admin admin = adminLoader.getController();
+        admin.displayInsName(username);
+        openPlatform(root, event);
+    }
     private void openPlatform(Parent root, ActionEvent event) {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BackGroundScene backgroundScene = new BackGroundScene();

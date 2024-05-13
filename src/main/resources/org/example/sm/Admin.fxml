@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Admin.Admin">
+   <children>
+      <Pane layoutX="80.0" layoutY="147.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
+         <children>
+            <ButtonBar layoutX="69.0" prefHeight="40.0" prefWidth="729.0">
+               <buttons>
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="Course" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" text="Student" />
+                  <Button mnemonicParsing="false" onAction="#Lecturer" text="Lecturer" />
+               </buttons>
+            </ButtonBar>
+            <TableView fx:id="courseTable" layoutX="34.0" layoutY="51.0" prefHeight="262.0" prefWidth="814.0">
+              <columns>
+                <TableColumn fx:id="CourseIDCol" prefWidth="73.59994506835938" text="CourseID" />
+                <TableColumn fx:id="LecturerIDCol" prefWidth="83.99995422363281" text="LecturerID" />
+                  <TableColumn fx:id="CourseNameCol" prefWidth="228.79998779296875" text="Course Name" />
+                  <TableColumn fx:id="CreditCol" prefWidth="65.60003662109375" text="Credit" />
+                  <TableColumn fx:id="RoomCol" prefWidth="75.99993896484375" text="Room" />
+                  <TableColumn fx:id="StarttimeCol" prefWidth="86.39996337890625" text="Start Time" />
+                  <TableColumn fx:id="EndtimeCol" prefWidth="84.800048828125" text="End Time" />
+                  <TableColumn fx:id="DoWCol" prefWidth="107.199951171875" text="Day of Week" />
+              </columns>
+            </TableView>
+            <Button layoutX="86.0" layoutY="329.0" mnemonicParsing="false" onAction="#addNewCourse" text="Add new course " />
+            <Pane fx:id="newcoursePane" layoutX="212.0" layoutY="329.0" prefHeight="168.0" prefWidth="538.0">
+               <children>
+                  <TextField fx:id="courseIDTf" layoutX="85.0" layoutY="20.0" prefHeight="25.0" prefWidth="104.0" />
+                  <TextField fx:id="lecIDTf" layoutX="276.0" layoutY="20.0" prefHeight="25.0" prefWidth="104.0" />
+                  <TextField fx:id="courseNameTf" layoutX="113.0" layoutY="55.0" prefHeight="25.0" prefWidth="190.0" />
+                  <TextField fx:id="roomTf" layoutX="352.0" layoutY="55.0" prefHeight="25.0" prefWidth="82.0" />
+                  <Label layoutX="27.0" layoutY="24.0" text="CourseID" />
+                  <Label layoutX="209.0" layoutY="24.0" text="LecturerID" />
+                  <Label layoutX="388.0" layoutY="24.0" text="Credit" />
+                  <TextField fx:id="creditTf" layoutX="432.0" layoutY="20.0" prefHeight="25.0" prefWidth="42.0" />
+                  <Label layoutX="27.0" layoutY="59.0" text="Course Name" />
+                  <Label layoutX="312.0" layoutY="59.0" text="Room" />
+                  <Label layoutX="27.0" layoutY="93.0" text="Start time" />
+                  <TextField fx:id="stimeTf" layoutX="85.0" layoutY="89.0" prefHeight="25.0" prefWidth="82.0" />
+                  <TextField fx:id="etimeTf" layoutX="235.0" layoutY="89.0" prefHeight="25.0" prefWidth="82.0" />
+                  <Label layoutX="182.0" layoutY="93.0" text="End time" />
+                  <Label layoutX="329.0" layoutY="93.0" text="Day of Week" />
+                  <TextField fx:id="dowTf" layoutX="412.0" layoutY="89.0" prefHeight="25.0" prefWidth="96.0" />
+                  <Label layoutX="27.0" layoutY="126.0" text="Start day" />
+                  <Label layoutX="269.0" layoutY="126.0" text="End day" />
+                  <DatePicker fx:id="sdayTf" layoutX="85.0" layoutY="122.0" prefHeight="25.0" prefWidth="145.0" />
+                  <DatePicker fx:id="edayTf" layoutX="324.0" layoutY="122.0" prefHeight="25.0" prefWidth="145.0" />
+               </children>
+            </Pane>
+            <Button fx:id="confirmButton" layoutX="643.0" layoutY="497.0" mnemonicParsing="false" onAction="#confirmNewCourse" text="Confirm" />
+         </children>
+      </Pane>
+      <Label fx:id="nameLabel" layoutX="80.0" layoutY="100.0" text="Label">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="837.0" layoutY="99.0" mnemonicParsing="false" onAction="#LogOut" text="Log out" />
+   </children>
+</AnchorPane>
