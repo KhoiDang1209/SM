@@ -24,7 +24,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TableView fx:id="gradesTableView" layoutX="37.0" layoutY="242.0" prefHeight="302.0" prefWidth="938.0">
+            <TableView fx:id="gradesTableView" layoutX="37.0" layoutY="242.0" prefHeight="252.0" prefWidth="938.0">
               <columns>
                   <TableColumn fx:id="studentIDTableColumn" prefWidth="88.79998397827148" text="Student ID" />
                 <TableColumn fx:id="courseIDTableColumn" prefWidth="72.0" text="Course ID" />
@@ -93,6 +93,8 @@
                </children>
             </GridPane>
             <Pane layoutX="175.0" layoutY="14.0" prefHeight="184.0" prefWidth="542.0" style="-fx-border-color: lightblue;" />
+            <Label fx:id="creditLabel" layoutX="77.0" layoutY="500.0" text="Label" />
+            <Label fx:id="GPALabel" layoutX="77.0" layoutY="527.0" text="Label" />
          </children>
       </Pane>
    </children>

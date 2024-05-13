@@ -15,10 +15,9 @@
    <children>
       <Pane layoutX="80.0" layoutY="147.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
-            <ButtonBar layoutX="69.0" prefHeight="40.0" prefWidth="729.0">
+            <ButtonBar layoutX="135.0" prefHeight="40.0" prefWidth="613.0">
                <buttons>
                   <Button fx:id="Course" mnemonicParsing="false" onAction="#Course" prefHeight="26.0" prefWidth="297.0" text="Course" textAlignment="CENTER" />
-                  <Button fx:id="Student" mnemonicParsing="false" text="Student" />
                   <Button fx:id="Lecturer" mnemonicParsing="false" text="Lecturer" />
                </buttons>
             </ButtonBar>
@@ -49,7 +48,7 @@
                   <DatePicker fx:id="jdateTF" layoutX="363.0" layoutY="89.0" prefHeight="25.0" prefWidth="118.0" />
                </children>
             </Pane>
-            <Button layoutX="643.0" layoutY="497.0" mnemonicParsing="false" onAction="#confirmNewLec" text="Confirm" />
+            <Button fx:id="confirmButton" layoutX="643.0" layoutY="497.0" mnemonicParsing="false" onAction="#confirmNewLec" text="Confirm" />
          </children>
       </Pane>
       <Label fx:id="nameLabel" layoutX="80.0" layoutY="100.0" text="Label">

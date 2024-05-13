@@ -15,10 +15,9 @@
    <children>
       <Pane layoutX="80.0" layoutY="147.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
-            <ButtonBar layoutX="69.0" prefHeight="40.0" prefWidth="729.0">
+            <ButtonBar layoutX="143.0" prefHeight="40.0" prefWidth="605.0">
                <buttons>
                   <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="Course" textAlignment="CENTER" />
-                  <Button mnemonicParsing="false" text="Student" />
                   <Button mnemonicParsing="false" onAction="#Lecturer" text="Lecturer" />
                </buttons>
             </ButtonBar>

@@ -76,10 +76,14 @@ public class Grades implements Initializable {
     private Label studentIDLabel;
     @FXML
     private Label studentNameLabel;
-
-
+    @FXML
+    private Label creditLabel;
+    @FXML
+    private Label GPALabel;
     String semester;
-
+    int[] credits= new int[40];
+    int[] overalls=new int[40];
+    int count=-1;
     ObservableList<GradesModel> gradesModelObservableList = FXCollections.observableArrayList();
 
     @FXML
@@ -124,15 +128,18 @@ public class Grades implements Initializable {
                 queryOutput = statement.executeQuery(gradesViewQuery);
 
                 while (queryOutput.next()) {
+                    count++;
                     String queryStudentID = queryOutput.getString("StudentID");
                     String queryCourseID = queryOutput.getString("CourseID");
                     String queryCourseName = queryOutput.getString("CourseName");
                     int queryCredit = queryOutput.getInt("Credit");
+                    credits[count]= queryOutput.getInt("Credit");
                     String querySemester = queryOutput.getString("Semester");
                     int queryProgress = queryOutput.getInt("Progress");
                     int queryMidterm = queryOutput.getInt("Midterm");
                     int queryFinalMark = queryOutput.getInt("Final");
                     int queryOverall = queryOutput.getInt("Overall");
+                    overalls[count]=queryOutput.getInt("Overall");
                     String queryOverallCharacter = queryOutput.getString("OverallCharacter");
                     String queryStudentName = queryOutput.getString("Name");
                     String queryStudentGender = queryOutput.getString("Gender");
@@ -180,8 +187,26 @@ public class Grades implements Initializable {
         } else {
             Logger.getLogger(Grades.class.getName()).log(Level.SEVERE, "Database connection is null");
         }
+        int accCredits=0;
+        double gpa=0;
+        for(int i=0;i<count;i++)
+        {
+            accCredits+=credits[i];
+            gpa+=credits[i]*overalls[i];
+        }
+        gpa=gpa/accCredits;
+        displayCredits(accCredits);
+        displayGPA(gpa);
     }
-
+    public void displayCredits(int n)
+    {
+        creditLabel.setText("Accumulated credits: "+ n);
+    }
+    public void displayGPA(double n)
+    {
+        String formattedGPA = String.format("%.2f", n);
+        GPALabel.setText("Overall GPA: " + formattedGPA);
+    }
     private void loadDataFromDatabase() {
         gradesModelObservableList.clear(); // Clear the existing data
 
