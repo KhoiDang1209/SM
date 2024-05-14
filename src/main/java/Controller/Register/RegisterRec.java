@@ -16,7 +16,7 @@ public class RegisterRec {
     private Time End;
     private String Day;
     private CheckBox select;
-
+    private CheckBox delete;
 
 
     public RegisterRec(String CourseID, String CourseName, int Credit, String Room, String LecturerName, String Day, Time Start, Time End) {
@@ -29,9 +29,13 @@ public class RegisterRec {
         this.End = End;
         this.Day = Day;
         this.select = new CheckBox();
+        this.delete = new CheckBox();
 
     }
 
+    public CheckBox getDelete() { return delete; }
+
+    public void setDelete(CheckBox delete) { this.delete = delete; }
 
     public CheckBox getSelect() {
         return select;
