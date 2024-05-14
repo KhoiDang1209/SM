@@ -61,9 +61,8 @@ public class Tuition {
     private Label DoBInfo;
     @FXML
     private Label ClassInfo;
-
-
-
+    @FXML
+    private Label announceLabel;
     public void setStuidInfo(String stuid) {
         stuidInfo.setText("StudentID: "+stuid);
     }
@@ -89,13 +88,32 @@ public class Tuition {
         stage.show();
     }
     public void initialize() throws SQLException {
-        // Ẩn pane khi controller được khởi tạo
         StuIDColumn.setCellValueFactory(new PropertyValueFactory<>("studentID"));
         TuiIDColumn.setCellValueFactory(new PropertyValueFactory<>("tuitionID"));
         AmountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         payDateColumn.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
         Semester.setCellValueFactory(new PropertyValueFactory<>("semester"));
         tuitionPane.setVisible(false);
+        Connection cn=DatabaseConnection.getConnection();
+        if(cn!=null)
+        {
+           String query="SELECT Sum(c.Credit) as totalCredit from Course as c join Enroll as er on c.CourseID=er.CourseID and er.Semester='I-2024' and er.StudentID=?";
+           try(PreparedStatement pst=cn.prepareStatement(query)) {
+               pst.setString(1, username);
+               ResultSet rs=pst.executeQuery();
+               if (rs==null)
+               {
+                   announceLabel.setText("There are no more receipts that need to be paid during the semester.");
+               }
+               else
+               {
+                   while (rs.next()) {
+                       int credit = rs.getInt("totalCredit");
+                       announceLabel.setText("You have registered " + credit + "credits. Tuition fee for I-2024 will be: " + 1409567 * credit+" vnd");
+                   }
+               }
+           }
+        }
     }
     public void ShowHistoryAction() throws SQLException
     {

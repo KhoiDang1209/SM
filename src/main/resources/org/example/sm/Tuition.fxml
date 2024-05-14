@@ -14,11 +14,6 @@
       <Pane layoutX="67.0" layoutY="157.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
             <Button layoutX="52.0" layoutY="42.0" mnemonicParsing="false" onAction="#Back" text="Back" />
-            <Label fx:id="nameLabel" layoutX="181.0" layoutY="90.0" text="There are no more receipts that need to be paid during the semester.">
-               <font>
-                  <Font name="Cambria" size="18.0" />
-               </font>
-            </Label>
             <CheckBox fx:id="ShowHistory" layoutX="181.0" layoutY="135.0" mnemonicParsing="false" onAction="#ShowHistoryAction" text="Show history">
                <font>
                   <Font name="Cambria" size="14.0" />
@@ -57,6 +52,11 @@
                   </Label>
                </children>
             </Pane>
+            <Label fx:id="announceLabel" layoutX="181.0" layoutY="77.0">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

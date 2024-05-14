@@ -27,10 +27,10 @@ public class Login {
     PasswordField passTextField;
 
     public static String username;
-
+    public static String password;
     public void Login(ActionEvent event) throws IOException {
         username = userTextField.getText();
-        String password = passTextField.getText();
+        password = passTextField.getText();
         if (username.equals("1") && password.equals("1")) {
             openStudentPlatform(username, event);
         } else if (username.equals("admin") && password.equals("123")) {

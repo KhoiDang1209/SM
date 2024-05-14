@@ -13,21 +13,22 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.example.sm.Main;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static Controller.Login.password;
 import static Controller.Login.username;
 
 public class LecturerInfo implements Initializable {
@@ -52,7 +53,14 @@ public class LecturerInfo implements Initializable {
 
     @FXML
     private Label lecturerPhoneLabel;
-
+    @FXML
+    private Pane changePassPane;
+    @FXML
+    private PasswordField current;
+    @FXML
+    private PasswordField newp;
+    @FXML
+    private PasswordField firmnew;
     @FXML
     void Back(ActionEvent event) throws IOException {
         FXMLLoader Back = new FXMLLoader(Main.class.getResource("InstructorPlatform.fxml"));
@@ -92,7 +100,7 @@ public class LecturerInfo implements Initializable {
         Connection connectDB = null;
         Statement statement = null;
         ResultSet queryOutput = null;
-
+        changePassPane.setVisible(false);
         connectDB = DatabaseConnection.getConnection();
 
         if (connectDB != null) {
@@ -134,6 +142,41 @@ public class LecturerInfo implements Initializable {
             }
         } else {
             Logger.getLogger(Grades.class.getName()).log(Level.SEVERE, "Database connection is null");
+        }
+    }
+    public void changepass()
+    {
+        changePassPane.setVisible(true);
+    }
+    public void confirmpass() throws SQLException {
+        String currentpass = current.getText();
+        String newpass = newp.getText();
+        String firmpass = firmnew.getText();
+        if (currentpass.equals(password))
+        {
+            if (newpass.equals(firmpass))
+            {
+                Connection cn=DatabaseConnection.getConnection();
+                if(cn!=null)
+                {
+                    String changepass="Update Lecturer Set lec_pass=? where LecturerID=?";
+                    try(PreparedStatement preparedStatement=cn.prepareStatement(changepass))
+                    {
+                        preparedStatement.setString(1, newpass);
+                        preparedStatement.setString(2, Login.username);
+                        preparedStatement.executeUpdate();
+                    }
+                }
+                JOptionPane.showMessageDialog(null, "Password successfully changed!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "New password and confirmed password do not match!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Current password is incorrect!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

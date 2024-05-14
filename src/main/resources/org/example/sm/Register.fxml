@@ -22,15 +22,15 @@
                         <TableColumn fx:id="CreditColumn" prefWidth="57.0" text="Credit" />
                         <TableColumn fx:id="RoomColumn" prefWidth="68.0" text="Room" />
                         <TableColumn fx:id="LecturerNameColumn" prefWidth="128.0" text="LecturerName" />
-                        <TableColumn fx:id="DayColumn" prefWidth="93.0" text="Day" />
-                        <TableColumn fx:id="StartColumn" prefWidth="77.0" text="Start" />
-                        <TableColumn fx:id="EndColumn" prefWidth="72.0" text="End" />
-                        <TableColumn fx:id="SelectColumn" prefWidth="101.0" text="Select" />
+                        <TableColumn fx:id="DayColumn" prefWidth="77.5999755859375" text="Day" />
+                        <TableColumn fx:id="StartColumn" prefWidth="77.5999755859375" text="Start" />
+                        <TableColumn fx:id="EndColumn" prefWidth="76.00006103515625" text="End" />
+                        <TableColumn fx:id="SelectColumn" prefWidth="84.800048828125" text="Select" />
                     </columns>
                 </TableView>
                 <Label layoutX="42.0" layoutY="85.0" text="Filter by course name:" />
                 <TextField fx:id="filterTextField" layoutX="169.0" layoutY="81.0" prefHeight="25.0" prefWidth="195.0" promptText="Course name" />
-                <Button layoutX="801.0" layoutY="81.0" mnemonicParsing="false" onAction="#addToDatabase" text="add" />
+                <Button layoutX="801.0" layoutY="81.0" mnemonicParsing="false" onAction="#addToDatabase" text="Add" />
                 <TableView fx:id="table2" layoutX="16.0" layoutY="330.0" prefHeight="177.0" prefWidth="859.0">
                     <columns>
                         <TableColumn fx:id="CourseIDColumn1" prefWidth="75.0" text="Course ID" />
@@ -38,13 +38,13 @@
                         <TableColumn fx:id="CreditColumn1" prefWidth="57.0" text="Credit" />
                         <TableColumn fx:id="RoomColumn1" prefWidth="68.0" text="Room" />
                         <TableColumn fx:id="LecturerNameColumn1" prefWidth="128.0" text="LecturerName" />
-                        <TableColumn fx:id="DayColumn1" prefWidth="93.0" text="Day" />
-                        <TableColumn fx:id="StartColumn1" prefWidth="77.0" text="Start" />
-                        <TableColumn fx:id="EndColumn1" prefWidth="72.0" text="End" />
-                        <TableColumn fx:id="DeleteColumn" prefWidth="101.0" text="Delete" />
+                        <TableColumn fx:id="DayColumn1" prefWidth="80.79998779296875" text="Day" />
+                        <TableColumn fx:id="StartColumn1" prefWidth="80.79998779296875" text="Start" />
+                        <TableColumn fx:id="EndColumn1" prefWidth="77.60003662109375" text="End" />
+                        <TableColumn fx:id="DeleteColumn" prefWidth="76.7999267578125" text="Delete" />
                     </columns>
                 </TableView>
-                <Button layoutX="825.0" layoutY="521.0" mnemonicParsing="false" onAction="#Delete" text="delete" />
+                <Button layoutX="825.0" layoutY="521.0" mnemonicParsing="false" onAction="#Delete" text="Delete" />
             </children>
         </Pane>
     </children>

@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -16,7 +17,7 @@
          <children>
             <ButtonBar prefHeight="40.0" prefWidth="844.0" />
             <Button layoutX="30.0" layoutY="40.0" mnemonicParsing="false" onAction="#Back" prefHeight="22.0" prefWidth="50.0" text="Back" />
-            <Pane layoutX="188.0" layoutY="117.0" prefHeight="309.0" prefWidth="523.0" style="-fx-border-color: lightblue;">
+            <Pane layoutX="191.0" layoutY="65.0" prefHeight="309.0" prefWidth="523.0" style="-fx-border-color: lightblue;">
                <children>
                   <GridPane layoutX="-1.0" prefHeight="309.0" prefWidth="509.0">
                     <columnConstraints>
@@ -118,6 +119,18 @@
                   </GridPane>
                </children>
             </Pane>
+            <Pane fx:id="changePassPane" layoutX="312.0" layoutY="381.0" prefHeight="138.0" prefWidth="332.0">
+               <children>
+                  <Button layoutX="254.0" layoutY="71.0" mnemonicParsing="false" onAction="#confirmpass" text="Update" />
+                  <Label layoutX="23.0" layoutY="14.0" text="Current" />
+                  <PasswordField fx:id="current" layoutX="107.0" layoutY="10.0" prefHeight="25.0" prefWidth="121.0" />
+                  <Label layoutX="23.0" layoutY="45.0" text="New" />
+                  <Label layoutX="23.0" layoutY="75.0" text="Confirm new" />
+                  <PasswordField fx:id="newp" layoutX="107.0" layoutY="41.0" prefHeight="25.0" prefWidth="121.0" />
+                  <PasswordField fx:id="firmnew" layoutX="107.0" layoutY="71.0" prefHeight="25.0" prefWidth="121.0" />
+               </children>
+            </Pane>
+            <Button layoutX="191.0" layoutY="391.0" mnemonicParsing="false" onAction="#changepass" text="Change password" />
          </children>
       </Pane>
    </children>
