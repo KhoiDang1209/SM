@@ -31,9 +31,7 @@ public class Login {
     public void Login(ActionEvent event) throws IOException {
         username = userTextField.getText();
         password = passTextField.getText();
-        if (username.equals("1") && password.equals("1")) {
-            openStudentPlatform(username, event);
-        } else if (username.equals("admin") && password.equals("123")) {
+        if (username.equals("admin") && password.equals("123")) {
             openAdminPlatform(username, event);
         } else {
             try (Connection cn = DatabaseConnection.getConnection()) {
