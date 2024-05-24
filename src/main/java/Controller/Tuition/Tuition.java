@@ -100,16 +100,13 @@ public class Tuition {
            String query="SELECT Sum(c.Credit) as totalCredit from Course as c join Enroll as er on c.CourseID=er.CourseID and er.Semester='I-2024' and er.StudentID=?";
            try(PreparedStatement pst=cn.prepareStatement(query)) {
                pst.setString(1, username);
-               ResultSet rs=pst.executeQuery();
-               if (rs==null)
-               {
-                   announceLabel.setText("There are no more receipts that need to be paid during the semester.");
-               }
-               else
-               {
-                   while (rs.next()) {
-                       int credit = rs.getInt("totalCredit");
-                       announceLabel.setText("You have registered " + credit + "credits. Tuition fee for I-2024 will be: " + 1409567 * credit+" vnd");
+               ResultSet rs = pst.executeQuery();
+               while (rs.next()) {
+                   int credit = rs.getInt("totalCredit");
+                   if (credit == 0) {
+                       announceLabel.setText("There are no more receipts that need to be paid during the semester.");
+                   } else {
+                       announceLabel.setText("You have registered " + credit + "credits. Tuition fee for I-2024 will be: " + 1409567 * credit + " vnd");
                    }
                }
            }

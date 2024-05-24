@@ -36,42 +36,27 @@ public class Login {
         } else {
             try (Connection cn = DatabaseConnection.getConnection()) {
                 if (cn != null) {
-                    // Kiểm tra trong bảng Student
-                    String queryStudent = "SELECT StudentID FROM Student WHERE StudentID=? AND stu_pass=?";
-                    try (PreparedStatement pstmtStudent = cn.prepareStatement(queryStudent)) {
-                        pstmtStudent.setString(1, username);
-                        pstmtStudent.setString(2, password);
-                        try (ResultSet rsStudent = pstmtStudent.executeQuery()) {
-                            if (rsStudent.next()) {
-                                // Xử lý đăng nhập của student
-                                openStudentPlatform(username, event);
-                                return;
-                            }
-                        }
-                    } catch (SQLException ex) {
-                        throw new RuntimeException(ex);
-                    }
+                    String queryUser="SELECT Role from [User] where UserName=? and UserPassword=?";
+                    try(PreparedStatement ps = cn.prepareStatement(queryUser)) {
+                        ps.setString(1, username);
+                        ps.setString(2, password);
+                        ResultSet rs = ps.executeQuery();
+                        if(rs==null)
+                        {
 
-                    // Kiểm tra trong bảng Lecturer
-                    String queryLecturer = "SELECT LecturerID FROM Lecturer WHERE LecturerID=? AND lec_pass=?";
-                    try (PreparedStatement pstmtLecturer = cn.prepareStatement(queryLecturer)) {
-                        pstmtLecturer.setString(1, username);
-                        pstmtLecturer.setString(2, password);
-                        try (ResultSet rsLecturer = pstmtLecturer.executeQuery()) {
-                            if (rsLecturer.next()) {
-                                // Xử lý đăng nhập của lecturer
-                                openInstructorPlatform(username, event);
-                                return;
-                            }
                         }
-                    } catch (SQLException ex) {
-                        throw new RuntimeException(ex);
+                        while(rs.next()) {
+                            String role=rs.getString("Role");
+                            if(role.equals("Student")){
+                                openStudentPlatform(username, event);
+                            }
+                            else openAdminPlatform(username, event);
+                        }
                     }
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
             // Nếu không phải student hoặc lecturer, hiển thị thông báo lỗi
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Failed");

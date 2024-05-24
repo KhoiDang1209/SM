@@ -17,7 +17,7 @@ public class Main extends Application {
         BackGroundScene backGround=new BackGroundScene();
         StackPane group=new StackPane(backGround.getBackgroundView(),root);
         Scene scene = new Scene(group, backGround.getBackgroundWidth(), backGround.getBackgroundHeight());
-        stage.setTitle("Hello!");
+        stage.setTitle("Edusoft");
         stage.setScene(scene);
         stage.show();
     }
