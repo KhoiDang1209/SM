@@ -49,8 +49,13 @@ public class Login {
                             String role=rs.getString("Role");
                             if(role.equals("Student")){
                                 openStudentPlatform(username, event);
+                                return;
                             }
-                            else openAdminPlatform(username, event);
+                            else
+                            {
+                                openInstructorPlatform(username, event);
+                                return;
+                            }
                         }
                     }
                 }

@@ -14,17 +14,12 @@
       <Pane layoutX="67.0" layoutY="157.0" prefHeight="542.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
             <Button layoutX="52.0" layoutY="42.0" mnemonicParsing="false" onAction="#Back" text="Back" />
-            <CheckBox fx:id="ShowHistory" layoutX="181.0" layoutY="135.0" mnemonicParsing="false" onAction="#ShowHistoryAction" text="Show history">
-               <font>
-                  <Font name="Cambria" size="14.0" />
-               </font>
-            </CheckBox>
-            <Pane fx:id="tuitionPane" layoutX="95.0" layoutY="160.0" prefHeight="351.0" prefWidth="705.0">
+            <Pane fx:id="tuitionPane" layoutX="95.0" layoutY="249.0" prefHeight="262.0" prefWidth="705.0">
                <children>
-                  <TableView fx:id="tuitionTable" layoutX="12.0" layoutY="113.0" prefHeight="125.0" prefWidth="674.0">
+                  <TableView fx:id="tuitionTable" layoutX="16.0" layoutY="131.0" prefHeight="125.0" prefWidth="674.0">
                      <columns>
-                        <TableColumn fx:id="StuIDColumn" prefWidth="137.59999084472656" text="StudentID" />
-                        <TableColumn fx:id="TuiIDColumn" prefWidth="166.39996337890625" text="TuitionID" />
+                        <TableColumn fx:id="StuIDColumn" prefWidth="134.40008544921875" text="StudentID" />
+                        <TableColumn fx:id="TuiIDColumn" prefWidth="169.59991455078125" text="TuitionID" />
                         <TableColumn fx:id="AmountColumn" prefWidth="132.79998779296875" text="Amount" />
                         <TableColumn fx:id="payDateColumn" prefWidth="113.60003662109375" text="PaymentDate" />
                         <TableColumn fx:id="Semester" prefWidth="117.60003662109375" text="Semester" />
@@ -35,17 +30,17 @@
                         <Font name="Cambria" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="DoBInfo" layoutX="42.0" layoutY="67.0" text="Label">
+                  <Label fx:id="DoBInfo" layoutX="42.0" layoutY="65.0" text="Label">
                      <font>
                         <Font name="Cambria" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="ClassInfo" layoutX="42.0" layoutY="92.0" text="Label">
+                  <Label fx:id="ClassInfo" layoutX="42.0" layoutY="91.0" text="Label">
                      <font>
                         <Font name="Cambria" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="nameInfo" layoutX="42.0" layoutY="41.0" text="Label">
+                  <Label fx:id="nameInfo" layoutX="42.0" layoutY="40.0" text="Label">
                      <font>
                         <Font name="Cambria" size="16.0" />
                      </font>
@@ -57,6 +52,29 @@
                   <Font name="Cambria" size="18.0" />
                </font>
             </Label>
+            <Label fx:id="announceLabel" layoutX="197.0" layoutY="125.0" text="Label">
+               <font>
+                  <Font name="Cambria" size="16.0" />
+               </font>
+            </Label>
+            <TableView fx:id="CourseTable" layoutX="216.0" layoutY="32.0" prefHeight="135.0" prefWidth="459.0">
+              <columns>
+                <TableColumn fx:id="courseID" prefWidth="84.80006408691406" text="CourseID" />
+                <TableColumn fx:id="courseName" prefWidth="195.99993896484375" text="CourseName" />
+                  <TableColumn fx:id="credit" prefWidth="84.80006408691406" text="Credit" />
+                  <TableColumn fx:id="newSemester" prefWidth="84.80006408691406" text="Semester" />
+              </columns>
+            </TableView>
+            <Label fx:id="announceLabel1" layoutX="197.0" layoutY="167.0" text="Label">
+               <font>
+                  <Font name="Cambria" size="16.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="ShowHistory" layoutX="155.0" layoutY="206.0" mnemonicParsing="false" onAction="#ShowHistoryAction" text="Show history">
+               <font>
+                  <Font name="Cambria" size="14.0" />
+               </font>
+            </CheckBox>
          </children>
       </Pane>
    </children>

@@ -38,6 +38,16 @@ public class Tuition {
     String classInfo=null;
     String semester=null;
     @FXML
+    private TableView<NewCourseRecord> CourseTable;
+    @FXML
+    private TableColumn<NewCourseRecord,String> courseID;
+    @FXML
+    private TableColumn<NewCourseRecord,String> courseName;
+    @FXML
+    private TableColumn<NewCourseRecord,Integer> credit;
+    @FXML
+    private TableColumn<NewCourseRecord,String> newSemester;
+    @FXML
     private TableView<TuitionRecord> tuitionTable;
     @FXML
     private TableColumn <TuitionRecord,String> StuIDColumn;
@@ -63,6 +73,8 @@ public class Tuition {
     private Label ClassInfo;
     @FXML
     private Label announceLabel;
+    @FXML
+    private Label announceLabel1;
     public void setStuidInfo(String stuid) {
         stuidInfo.setText("StudentID: "+stuid);
     }
@@ -93,6 +105,10 @@ public class Tuition {
         AmountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         payDateColumn.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
         Semester.setCellValueFactory(new PropertyValueFactory<>("semester"));
+        courseID.setCellValueFactory(new PropertyValueFactory<>("courseID"));
+        courseName.setCellValueFactory(new PropertyValueFactory<>("courseName"));
+        credit.setCellValueFactory(new PropertyValueFactory<>("credit"));
+        newSemester.setCellValueFactory(new PropertyValueFactory<>("Semester"));
         tuitionPane.setVisible(false);
         Connection cn=DatabaseConnection.getConnection();
         if(cn!=null)
@@ -105,8 +121,27 @@ public class Tuition {
                    int credit = rs.getInt("totalCredit");
                    if (credit == 0) {
                        announceLabel.setText("There are no more receipts that need to be paid during the semester.");
+                       CourseTable.setVisible(false);
+                       announceLabel1.setVisible(false);
                    } else {
-                       announceLabel.setText("You have registered " + credit + "credits. Tuition fee for I-2024 will be: " + 1409567 * credit + " vnd");
+                       String query2="Select c.CourseID, c.CourseName, c.Credit, e.Semester from Course as c join Enroll as e on c.CourseID=e.CourseID and e.Semester='I-2024' and e.StudentID=?";
+                       try(PreparedStatement preparedStatement=cn.prepareStatement(query2))
+                       {
+                           preparedStatement.setString(1,username);
+                           ResultSet rs1=preparedStatement.executeQuery();
+                           ObservableList<NewCourseRecord> newCourseRecords=FXCollections.observableArrayList();
+                           while (rs1.next())
+                           {
+                               String courseID=rs1.getString("CourseID");
+                               String courseName=rs1.getString("CourseName");
+                               int credit1=rs1.getInt("Credit");
+                               String semester=rs1.getString("Semester");
+                               newCourseRecords.add(new NewCourseRecord(courseID,courseName,credit1,semester));
+                           }
+                           CourseTable.setItems(newCourseRecords);
+                       }
+                       announceLabel1.setText("You have registered " + credit + " credits. Tuition fee for I-2024 will be: " + 1409567 * credit + " vnd");
+                       announceLabel.setVisible(false);
                    }
                }
            }
