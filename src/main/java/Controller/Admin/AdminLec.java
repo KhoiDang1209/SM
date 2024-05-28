@@ -132,7 +132,7 @@ public class AdminLec {
                 try {
                     Connection conn = DatabaseConnection.getConnection();
                     if (conn != null) {
-                        String insertLecQuery = "INSERT INTO Lecturer (LecturerID, LecturerName, LecturerEmail, LecturerPhone, Field, Join_Date,lec_pass) VALUES (?, ?, ?, ?, ?, ?,1)";
+                        String insertLecQuery = "INSERT INTO Lecturer (LecturerID, LecturerName, LecturerEmail, LecturerPhone, Field, Join_Date) VALUES (?, ?, ?, ?, ?, ?)";
                         try (PreparedStatement ps = conn.prepareStatement(insertLecQuery)) {
                             ps.setString(1, lecID);
                             ps.setString(2, lecName);
@@ -145,6 +145,29 @@ public class AdminLec {
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
+                }
+                try{
+                    Connection connection=DatabaseConnection.getConnection();
+                    if(connection!=null)
+                    {
+                        int countUser=0;
+                        String selectquery="Select Count(UserID) as total from [User]";
+                        Statement statement=connection.createStatement();
+                        ResultSet rs=statement.executeQuery(selectquery);
+                        while (rs.next())
+                        {
+                            countUser=rs.getInt("total");
+                        }
+                        String insertquery="Insert into [User] (UserID, UserName, UserPassword, Role) VALUES (?,?,1,?)";
+                        try (PreparedStatement ps = connection.prepareStatement(insertquery)) {
+                            ps.setInt(1, countUser);
+                            ps.setString(2, lecID);
+                            ps.setString(3, "Lecturer");
+                            ps.executeUpdate();
+                        }
+                    }
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
                 }
             }
         });
